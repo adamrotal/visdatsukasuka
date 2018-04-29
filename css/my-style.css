@@ -1,0 +1,67 @@
+.travel-places-title {
+	margin-top: 5%;
+	margin-bottom: 2.5%;
+	height: 5%;
+}
+
+.travel-places-title p {
+	text-align: center;
+	font-size: 28px;
+}
+
+.travel-places-container {
+	width: 100%;
+	height: 2000px;
+}
+
+.travel-place-container {
+	width: 100%;
+	height: 17.5%;
+	margin-bottom: 1.5%;
+}
+
+.place-title {
+	width: 100%;
+	height: 10%;
+	margin-bottom: 1%;
+}
+
+.place-title p {
+	font-size: 24px;
+}
+
+.place-photo-desc-container {
+	width: 100%;
+	height: 40%;
+	display: block;
+	margin-bottom: 1%;
+}
+
+.place-photo-container {
+	width: 23.5%;
+	height: auto;
+	display: inline-block;
+	float: left;
+}
+
+.place-photo {
+	width: 100%;
+	height: 100%;
+}
+
+.place-description {
+	width: 72.5%;
+	height: 100%;
+	display: inline-block;
+	float: right;
+}
+
+.place-description p {
+	font-size: 14px;
+}
+
+.place-line-chart {
+	width: 100%;
+	height: 40%;
+	display: block;
+}

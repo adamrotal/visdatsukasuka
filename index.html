@@ -2,381 +2,597 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Visdat Sukasuka</title>
-    <!-- <link rel="icon" href="img/fav.png" type="image/x-icon"> -->
+	<title>Visdat Sukasuka</title>
+	<!-- <link rel="icon" href="img/fav.png" type="image/x-icon"> -->
 
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <!-- <link href="ionicons/css/ionicons.min.css" rel="stylesheet"> -->
+	<!-- Bootstrap -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<!-- <link href="ionicons/css/ionicons.min.css" rel="stylesheet"> -->
 
-    <!-- main css -->
-    <link href="css/style.css" rel="stylesheet">
+	<!-- CSS Files -->
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/my-style.css" rel="stylesheet">
 
-    <!-- emoji -->
-    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+	<!-- emoji -->
+	<link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
 
-    <!-- modernizr -->
-    <script src="js/modernizr.js"></script>
+	<!-- modernizr -->
+	<script src="js/modernizr.js"></script>
 
-    <!-- jQuery -->
-    <script src="js/jquery-2.1.1.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <!--  custom script -->
-    <script src="js/custom.js"></script>
+	<!-- jQuery -->
+	<script src="js/jquery-2.1.1.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<!--  custom script -->
+	<script src="js/custom.js"></script>
 
-    <!-- fullPage -->
-    <link rel="stylesheet" type="text/css" href="css/jquery.fullpage.min.css" />
+	<!-- fullPage -->
+	<link rel="stylesheet" type="text/css" href="css/jquery.fullpage.min.css" />
 
-    <script type="text/javascript" src="js/scrolloverflow.min.js"></script>
+	<script type="text/javascript" src="js/scrolloverflow.min.js"></script>
 
-    <script type="text/javascript" src="js/jquery.fullpage.min.js"></script>
-    <!-- <script type="text/javascript" src="examples.js"></script> -->
+	<script type="text/javascript" src="js/jquery.fullpage.min.js"></script>
+	<!-- <script type="text/javascript" src="examples.js"></script> -->
 
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('#fullpage').fullpage({
-                anchors: ['firstPage', 'secondPage', '3rdPage'],
-                // sectionsColor: ['#4A6FB1','#323539'],
-                scrollOverflow: true,
-                navigation: true,
-                navigationPosition: 'right',
-                navigationTooltips: ['First page', 'Second page', 'Third and last page'],
-                scrollingSpeed: 1000
-            });
-        });
-    </script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				anchors: ['firstPage', 'secondPage', '3rdPage'],
+				// sectionsColor: ['#4A6FB1','#323539'],
+				scrollOverflow: true,
+				navigation: true,
+				navigationPosition: 'right',
+				navigationTooltips: ['First page', 'Second page', 'Third and last page'],
+				scrollingSpeed: 1000
+			});
+		});
+	</script>
 
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load('current', {
-        'packages':['geochart'],
-        // Note: you will need to get a mapsApiKey for your project.
-        // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
-        'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
-      });
-      google.charts.setOnLoadCallback(drawRegionsMap);
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<script type="text/javascript">
+		google.charts.load('current', {
+			'packages':['geochart'],
+			'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
+		});
+		google.charts.setOnLoadCallback(drawRegionsMap);
+		
+		function drawRegionsMap() {
+			var data = google.visualization.arrayToDataTable([
+				['Country', 'Popularity'],
+				['Germany', 200],
+				['United States', 300],
+				['Brazil', 400],
+				['Canada', 500],
+				['France', 600],
+				['RU', 700]
+			]);
 
-      function drawRegionsMap() {
-        var data = google.visualization.arrayToDataTable([
-          ['Country', 'Popularity'],
-          ['Germany', 200],
-          ['United States', 300],
-          ['Brazil', 400],
-          ['Canada', 500],
-          ['France', 600],
-          ['RU', 700]
-        ]);
+			var options = {};
 
-        var options = {};
+			var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
 
-        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+			chart.draw(data, options);
+		}
+	</script>
 
-        chart.draw(data, options);
-      }
-    </script>
+	<script type="text/javascript">
+		google.charts.load('current', {'packages':['line']});
+		google.charts.setOnLoadCallback(drawChart);
 
-    <script type="text/javascript">
-        google.charts.load('current', {'packages':['line']});
-        google.charts.setOnLoadCallback(drawChart);
+		function drawChart() {
+			var data = new google.visualization.DataTable();
+			data.addColumn('number', 'Day');
+			data.addColumn('number', 'Guardians of the Galaxy');
+			data.addColumn('number', 'The Avengers');
+			data.addColumn('number', 'Transformers: Age of Extinction');
 
-        function drawChart() {
+			data.addRows([
+				[1,  37.8, 80.8, 41.8],
+				[2,  30.9, 69.5, 32.4],
+				[3,  25.4,   57, 25.7],
+				[4,  11.7, 18.8, 10.5],
+				[5,  11.9, 17.6, 10.4],
+				[6,   8.8, 13.6,  7.7],
+				[7,   7.6, 12.3,  9.6],
+				[8,  12.3, 29.2, 10.6],
+				[9,  16.9, 42.9, 14.8],
+				[10, 12.8, 30.9, 11.6],
+				[11,  5.3,  7.9,  4.7],
+				[12,  6.6,  8.4,  5.2],
+				[13,  4.8,  6.3,  3.6],
+				[14,  4.2,  6.2,  3.4]
+			]);
 
-          var data = new google.visualization.DataTable();
-          data.addColumn('number', 'Day');
-          data.addColumn('number', 'Guardians of the Galaxy');
-          data.addColumn('number', 'The Avengers');
-          data.addColumn('number', 'Transformers: Age of Extinction');
+			var options = {
+				chart: {
+					title: 'Box Office Earnings in First Two Weeks of Opening',
+					subtitle: 'in millions of dollars (USD)'
+				}
+			};
 
-          data.addRows([
-            [1,  37.8, 80.8, 41.8],
-            [2,  30.9, 69.5, 32.4],
-            [3,  25.4,   57, 25.7],
-            [4,  11.7, 18.8, 10.5],
-            [5,  11.9, 17.6, 10.4],
-            [6,   8.8, 13.6,  7.7],
-            [7,   7.6, 12.3,  9.6],
-            [8,  12.3, 29.2, 10.6],
-            [9,  16.9, 42.9, 14.8],
-            [10, 12.8, 30.9, 11.6],
-            [11,  5.3,  7.9,  4.7],
-            [12,  6.6,  8.4,  5.2],
-            [13,  4.8,  6.3,  3.6],
-            [14,  4.2,  6.2,  3.4]
-          ]);
+			var chart = new google.charts.Line(document.getElementById('linechart_material'));
 
-          var options = {
-            chart: {
-              title: 'Box Office Earnings in First Two Weeks of Opening',
-              subtitle: 'in millions of dollars (USD)'
-            }
-          };
-
-          var chart = new google.charts.Line(document.getElementById('linechart_material'));
-
-          chart.draw(data, google.charts.Line.convertOptions(options));
-        }
-    </script>
+			chart.draw(data, google.charts.Line.convertOptions(options));
+		}
+	</script>
+	
+	<!-- Chart loader -->
+	<script type="text/javascript" src="js/chart.js"></script>
 
 </head>
 
 <body>
 
     <!-- Preloader -->
-    <div id="preloader">
-        <div class="pre-container">
-            <div class="spinner">
-                <div class="double-bounce1"></div>
-                <div class="double-bounce2"></div>
-            </div>
-        </div>
-    </div>
-    <!-- end Preloader -->
+	<div id="preloader">
+		<div class="pre-container">
+			<div class="spinner">
+				<div class="double-bounce1"></div>
+				<div class="double-bounce2"></div>
+			</div>
+		</div>
+	</div>
+	<!-- end Preloader -->
 
-    <div id="fullpage">
-        <div class="section" id="section0">
-            <!-- <div class="box-intro"> -->
-                <!-- <div class="table-cell"> -->
-                    <div class="row">
-                        <div class="col-md-6 col-md-offset-3">
-                            <h1 class="title-h1 center">
-                                Lorem Ipsum
-                            </h1>
-                            <br>
-                            <h5>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            </h5>
-                            <br>
-                            Eu nec ferri molestie consequat, vel at alia dolore putant. Labore philosophia ut vix. In vis nostrud interesset appellantur, vis et tation feugiat scripserit. Te nec noster suavitate persecuti. Diceret erroribus cu vix, alii omnes ei sit. Sea an corrumpit patrioque, virtute accumsan nominavi et usu, ex mei dolore vocibus incorrupte.
+	<div id="fullpage">
+		<div class="section" id="section0">
+			<!-- <div class="box-intro"> -->
+				<!-- <div class="table-cell"> -->
+					<div class="row">
+						<div class="col-md-6 col-md-offset-3">
+							<h1 class="title-h1 center">
+								Lorem Ipsum
+							</h1>
+							<br>
+							<h5>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+							</h5>
+							<br>
+							Eu nec ferri molestie consequat, vel at alia dolore putant. Labore philosophia ut vix. In vis nostrud interesset appellantur, vis et tation feugiat scripserit. Te nec noster suavitate persecuti. Diceret erroribus cu vix, alii omnes ei sit. Sea an corrumpit patrioque, virtute accumsan nominavi et usu, ex mei dolore vocibus incorrupte.
 
-                            Duo ea saperet tacimates. Sed possim prodesset no, per novum putent doctus ea. Eu mea magna aliquip graecis, pri corpora officiis complectitur ei, lorem saepe consetetur his ad. Meis consulatu ei vis, an altera ocurreret interesset qui.
+							Duo ea saperet tacimates. Sed possim prodesset no, per novum putent doctus ea. Eu mea magna aliquip graecis, pri corpora officiis complectitur ei, lorem saepe consetetur his ad. Meis consulatu ei vis, an altera ocurreret interesset qui.
 
-                            Eu ponderum comprehensam his, case antiopam pri te. Mel ne partem consequat instructior. Ad dicunt malorum sea, ex qui omnes invenire gubergren. Ius cu autem aliquando, pri vide ornatus perpetua an, no has epicuri verterem. Nam at animal pertinax efficiantur.
-                            Eu ponderum comprehensam his, case antiopam pri te. Mel ne partem consequat instructior. Ad dicunt malorum sea, ex qui omnes invenire gubergren. Ius cu autem aliquando, pri vide ornatus perpetua an, no has epicuri verterem. Nam at animal pertinax efficiantur.
-                            Eu ponderum comprehensam his, case antiopam pri te. Mel ne partem consequat instructior. Ad dicunt malorum sea, ex qui omnes invenire gubergren. Ius cu autem aliquando, pri vide ornatus perpetua an, no has epicuri verterem. Nam at animal pertinax efficiantur.
+							Eu ponderum comprehensam his, case antiopam pri te. Mel ne partem consequat instructior. Ad dicunt malorum sea, ex qui omnes invenire gubergren. Ius cu autem aliquando, pri vide ornatus perpetua an, no has epicuri verterem. Nam at animal pertinax efficiantur.
+							Eu ponderum comprehensam his, case antiopam pri te. Mel ne partem consequat instructior. Ad dicunt malorum sea, ex qui omnes invenire gubergren. Ius cu autem aliquando, pri vide ornatus perpetua an, no has epicuri verterem. Nam at animal pertinax efficiantur.
+							Eu ponderum comprehensam his, case antiopam pri te. Mel ne partem consequat instructior. Ad dicunt malorum sea, ex qui omnes invenire gubergren. Ius cu autem aliquando, pri vide ornatus perpetua an, no has epicuri verterem. Nam at animal pertinax efficiantur.
 
-                            Per alienum torquatos eu. 
-                        </div>
-                    </div>
-                    <div id="regions_div" class="col-centered" style="width: 1000px; height: 300px;"></div>
-                    <br>
-                <!-- </div> -->
-            <!-- </div> -->
-        </div>
+							Per alienum torquatos eu. 
+						</div>
+					</div>
+					<div id="regions_div" class="col-centered" style="width: 1000px; height: 300px;"></div>
+					<br>
+				<!-- </div> -->
+			<!-- </div> -->
+		</div>
 
-        <div class="section" id="section1">
-            <div id="linechart_material" class="col-centered" style="width: 1000px; height: 300px"></div>
-        </div>
+		<div class="section" id="section1">
+			<div id="linechart_material" class="col-centered" style="width: 1000px; height: 300px"></div>
+		</div>
 
-        <div class="section" id="section3">
-            <!-- <div class="box-intro"> -->
-                <!-- <div class="table-cell"> -->
-                    <div class="row">
-                        <div class="col-md-6 col-md-offset-3">
-                            <h1 class="title-h1 center">
-                                Lorem Ipsum
-                            </h1>
-                            <br>
-                            <h5>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            </h5>
-                            <br>
-                            Eu nec ferri molestie consequat, vel at alia dolore putant. Labore philosophia ut vix. In vis nostrud interesset appellantur, vis et tation feugiat scripserit. Te nec noster suavitate persecuti. Diceret erroribus cu vix, alii omnes ei sit. Sea an corrumpit patrioque, virtute accumsan nominavi et usu, ex mei dolore vocibus incorrupte.
+		<div class="section" id="section3">
+			<div class="row">
+				<div class="col-md-10 col-md-offset-1">
+					<div class="travel-places-title">
+						<p>5 Tempat yang Paling Banyak Dicari oleh Orang Indonesia di
+							<select>
+								<option value="HK">Hong Kong</option>
+								<option value="JP">Jepang</option>
+								<option value="MY">Malaysia</option>
+								<option value="SG">Singapura</option>
+								<option value="TH">Thailand</option>
+							</select>
+						</p>
+					</div>
 
-                            Duo ea saperet tacimates. Sed possim prodesset no, per novum putent doctus ea. Eu mea magna aliquip graecis, pri corpora officiis complectitur ei, lorem saepe consetetur his ad. Meis consulatu ei vis, an altera ocurreret interesset qui.
 
-                            Eu ponderum comprehensam his, case antiopam pri te. Mel ne partem consequat instructior. Ad dicunt malorum sea, ex qui omnes invenire gubergren. Ius cu autem aliquando, pri vide ornatus perpetua an, no has epicuri verterem. Nam at animal pertinax efficiantur.
-                            Eu ponderum comprehensam his, case antiopam pri te. Mel ne partem consequat instructior. Ad dicunt malorum sea, ex qui omnes invenire gubergren. Ius cu autem aliquando, pri vide ornatus perpetua an, no has epicuri verterem. Nam at animal pertinax efficiantur.
-                            Eu ponderum comprehensam his, case antiopam pri te. Mel ne partem consequat instructior. Ad dicunt malorum sea, ex qui omnes invenire gubergren. Ius cu autem aliquando, pri vide ornatus perpetua an, no has epicuri verterem. Nam at animal pertinax efficiantur.
+<!--
+					<div class="travel-places-container" id="hongkong-places-container">
+						<div class="travel-place-container">
+							<div class="place-title">
+								<p>1. Hong Kong Disneyland</p>
+							</div>
+							<div class="place-photo-desc-container">
+								<div class="place-photo-container">
+									<img class="place-photo" src="img/Hongkong Disneyland.png">
+								</div>
+								<div class="place-description">
+									<p>Hong Kong Disneyland adalah sebuah taman hiburan di Hong Kong Disneyland Resort. Taman ini dibuat oleh Walt Disney Company dan Pemerintah Hong Kong di tanah sebelah Teluk Penny, Pulau Lantau, Hong Kong. Beberapa tema atraksinya antara lain Main Street (USA), Fantasyland, Adventurland/Pirateland, Tomorrowland, Toy Story Land, Grizzy Gulch, dan Mystic Point.</p>
+								</div>
+							</div>
+							<div class="place-line-chart" id="hongkong-disneyland-chart">
 
-                            Per alienum torquatos eu. 
+							</div>
+						</div>
 
-                            <h1 class="title-h1 center">
-                                Lorem Ipsum
-                            </h1>
-                            <br>
-                            <h5>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            </h5>
-                            <br>
-                            Eu nec ferri molestie consequat, vel at alia dolore putant. Labore philosophia ut vix. In vis nostrud interesset appellantur, vis et tation feugiat scripserit. Te nec noster suavitate persecuti. Diceret erroribus cu vix, alii omnes ei sit. Sea an corrumpit patrioque, virtute accumsan nominavi et usu, ex mei dolore vocibus incorrupte.
+						<div class="travel-place-container">
+							<div class="place-title">
+								<p>2. Madame Tussauds Hong Kong</p>
+							</div>
+							<div class="place-photo-desc-container">
+								<div class="place-photo-container">
+									<img class="place-photo" src="img/Hongkong Madame Tussaud.jpeg">
+								</div>
+								<div class="place-description">
+									<p>Madame Tussauds Hong Kong, yang merupakan bagian dari jaringan museum lilin terkenal yang dibentuk oleh Marie Tussaud dari Perancis, terletak di Peak Tower, Pulau Hong Kong, Hong Kong. Museum tersebut merupakan museum Madame Tussauds pertama di Asia. Cabang Hong Kong menyimpan sekitar 100 patung lilin houses dari tokoh-tokoh yang terkenal di mancanegara.</p>
+								</div>
+							</div>
+							<div class="place-line-chart" id="madame-tussauds-chart">
 
-                            Duo ea saperet tacimates. Sed possim prodesset no, per novum putent doctus ea. Eu mea magna aliquip graecis, pri corpora officiis complectitur ei, lorem saepe consetetur his ad. Meis consulatu ei vis, an altera ocurreret interesset qui.
+							</div>
+						</div>
 
-                            Eu ponderum comprehensam his, case antiopam pri te. Mel ne partem consequat instructior. Ad dicunt malorum sea, ex qui omnes invenire gubergren. Ius cu autem aliquando, pri vide ornatus perpetua an, no has epicuri verterem. Nam at animal pertinax efficiantur.
-                            Eu ponderum comprehensam his, case antiopam pri te. Mel ne partem consequat instructior. Ad dicunt malorum sea, ex qui omnes invenire gubergren. Ius cu autem aliquando, pri vide ornatus perpetua an, no has epicuri verterem. Nam at animal pertinax efficiantur.
-                            Eu ponderum comprehensam his, case antiopam pri te. Mel ne partem consequat instructior. Ad dicunt malorum sea, ex qui omnes invenire gubergren. Ius cu autem aliquando, pri vide ornatus perpetua an, no has epicuri verterem. Nam at animal pertinax efficiantur.
+						<div class="travel-place-container">
+							<div class="place-title">
+								<p>3. Pulau Lantau</p>
+							</div>
+							<div class="place-photo-desc-container">
+								<div class="place-photo-container">
+									<img class="place-photo" src="img/Hongkong Lantau Island.jpg">
+								</div>
+								<div class="place-description">
+									<p>Pulau Lantau (juga Pulau Lantao; Tionghoa: 大嶼山) adalah pulau terbesar di Hong Kong, yang terletak di mulut Sungai Mutiara. Aslinya adalah tempat desa-desa nelayan, pulau tersebut dikembangkan pada tahun-tahun terkini dengan pembuatan Kota Baru Tung Chung di pesisir barat lautnya. Beberapa tempat wisata disana termasuk patung Buddha Tian Tan, kota nelayan Tai O, dan kereta gantung Ngong Ping 360.</p>
+								</div>
+							</div>
+							<div class="place-line-chart" id="lantau-island-chart">
 
-                            Per alienum torquatos eu. 
+							</div>
+						</div>
 
-                            <h1 class="title-h1 center">
-                                Lorem Ipsum
-                            </h1>
-                            <br>
-                            <h5>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            </h5>
-                            <br>
-                            Eu nec ferri molestie consequat, vel at alia dolore putant. Labore philosophia ut vix. In vis nostrud interesset appellantur, vis et tation feugiat scripserit. Te nec noster suavitate persecuti. Diceret erroribus cu vix, alii omnes ei sit. Sea an corrumpit patrioque, virtute accumsan nominavi et usu, ex mei dolore vocibus incorrupte.
+						<div class="travel-place-container">
+							<div class="place-title">
+								<p>4. Ocean Park Hong Kong</p>
+							</div>
+							<div class="place-photo-desc-container">
+								<div class="place-photo-container">
+									<img class="place-photo" src="img/Hongkong Ocean Park.jpg">
+								</div>
+								<div class="place-description">
+									<p>Ocean Park Hong Kong adalah taman mamalia laut, oceanarium, taman bermain binatang, dan taman hiburan yang terletak di Wong Chuk Hang dan Nam Long Shan di Distrik Selatan Hong Kong. Ini, bersama dengan Hong Kong Disneyland, salah satu dari dua taman hiburan terbesar di Hong Kong.</p>
+								</div>
+							</div>
+							<div class="place-line-chart" id="ocean-park-chart">
 
-                            Duo ea saperet tacimates. Sed possim prodesset no, per novum putent doctus ea. Eu mea magna aliquip graecis, pri corpora officiis complectitur ei, lorem saepe consetetur his ad. Meis consulatu ei vis, an altera ocurreret interesset qui.
+							</div>
+						</div>
 
-                            Eu ponderum comprehensam his, case antiopam pri te. Mel ne partem consequat instructior. Ad dicunt malorum sea, ex qui omnes invenire gubergren. Ius cu autem aliquando, pri vide ornatus perpetua an, no has epicuri verterem. Nam at animal pertinax efficiantur.
-                            Eu ponderum comprehensam his, case antiopam pri te. Mel ne partem consequat instructior. Ad dicunt malorum sea, ex qui omnes invenire gubergren. Ius cu autem aliquando, pri vide ornatus perpetua an, no has epicuri verterem. Nam at animal pertinax efficiantur.
-                            Eu ponderum comprehensam his, case antiopam pri te. Mel ne partem consequat instructior. Ad dicunt malorum sea, ex qui omnes invenire gubergren. Ius cu autem aliquando, pri vide ornatus perpetua an, no has epicuri verterem. Nam at animal pertinax efficiantur.
+						<div class="travel-place-container">
+							<div class="place-title">
+								<p>5. Tsim Sha Tsui</p>
+							</div>
+							<div class="place-photo-desc-container">
+								<div class="place-photo-container">
+									<img class="place-photo" src="img/Hongkong Tsim Sha Tsui.jpg">
+								</div>
+								<div class="place-description">
+									<p>Lebih dari sekadar distrik, Tsim Sha Tsui adalah bazaar raksasa, di mana pelabuhan berkilauan di Hong Kong dipenuhi oleh kios, toko, pasar, dan mal. Di sini, Anda akan dapat jalan-jalan melewati memorabilia bertema Bollywood, mengunjungi penjahit Shanghai, makan di restoran bentuk  bemo yang cantik, melihat permata dan perhiasan yang cantik, dan toko merek internasional, dan butik label jalanan Asia.</p>
+								</div>
+							</div>
+							<div class="place-line-chart" id="tsim-sha-tsui-chart">
 
-                            Per alienum torquatos eu. 
+							</div>
+						</div>
+					</div>
 
-                            <h1 class="title-h1 center">
-                                Lorem Ipsum
-                            </h1>
-                            <br>
-                            <h5>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            </h5>
-                            <br>
-                            Eu nec ferri molestie consequat, vel at alia dolore putant. Labore philosophia ut vix. In vis nostrud interesset appellantur, vis et tation feugiat scripserit. Te nec noster suavitate persecuti. Diceret erroribus cu vix, alii omnes ei sit. Sea an corrumpit patrioque, virtute accumsan nominavi et usu, ex mei dolore vocibus incorrupte.
+					<div class="travel-places-container" id="japan-places-container">                	
+						<div class="travel-place-container">
+							<div class="place-title">
+								<p>1. Arashiyama</p>
+							</div>
+							<div class="place-photo-desc-container">
+								<div class="place-photo-container">
+									<img class="place-photo" src="img/Japan Arashiyama.jpg">
+								</div>
+								<div class="place-description">
+									<p>Arashiyama adalah distrik wisata paling penting kedua di Kyoto, dipenuhi dengan kuil dan tempat suci, tetapi daya tarik bintangnya adalah Hutan Bambu Arashiyama yang terkenal. Arashiyama berada di ujung barat Kyoto. Jaraknya yang cukup jauh dari pusat Kyoto: sekitar 30 menit perjalanan. Namun, perjalanan panjang ini worth it untuk sejumlah pemandangan hebat di sini.</p>
+								</div>
+							</div>
+							<div class="place-line-chart" id="arashiyama-chart">
 
-                            Duo ea saperet tacimates. Sed possim prodesset no, per novum putent doctus ea. Eu mea magna aliquip graecis, pri corpora officiis complectitur ei, lorem saepe consetetur his ad. Meis consulatu ei vis, an altera ocurreret interesset qui.
+							</div>
+						</div>
 
-                            Eu ponderum comprehensam his, case antiopam pri te. Mel ne partem consequat instructior. Ad dicunt malorum sea, ex qui omnes invenire gubergren. Ius cu autem aliquando, pri vide ornatus perpetua an, no has epicuri verterem. Nam at animal pertinax efficiantur.
-                            Eu ponderum comprehensam his, case antiopam pri te. Mel ne partem consequat instructior. Ad dicunt malorum sea, ex qui omnes invenire gubergren. Ius cu autem aliquando, pri vide ornatus perpetua an, no has epicuri verterem. Nam at animal pertinax efficiantur.
-                            Eu ponderum comprehensam his, case antiopam pri te. Mel ne partem consequat instructior. Ad dicunt malorum sea, ex qui omnes invenire gubergren. Ius cu autem aliquando, pri vide ornatus perpetua an, no has epicuri verterem. Nam at animal pertinax efficiantur.
+						<div class="travel-place-container">
+							<div class="place-title">
+								<p>2. Gunung Fuji</p>
+							</div>
+							<div class="place-photo-desc-container">
+								<div class="place-photo-container">
+									<img class="place-photo" src="img/Japan Mount Fuji.jpg">
+								</div>
+								<div class="place-description">
+									<p>Gunung Fuji adalah gunung tertinggi di Jepang, terletak di perbatasan Prefektur Shizuoka dan Yamanashi, di sebelah barat Tokyo. Gunung setinggi 3.776 m ini dikelilingi juga oleh lima danau yaitu Kawaguchi, Yamanaka, Sai, Motosu dan Shoji. Gunung Fuji diperkirakan terbentuk sekitar 10.000 tahun yang lalu.</p>
+								</div>
+							</div>
+							<div class="place-line-chart" id="mount-fuji-chart">
 
-                            Per alienum torquatos eu. 
+							</div>
+						</div>
 
-                            <h1 class="title-h1 center">
-                                Lorem Ipsum
-                            </h1>
-                            <br>
-                            <h5>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            </h5>
-                            <br>
-                            Eu nec ferri molestie consequat, vel at alia dolore putant. Labore philosophia ut vix. In vis nostrud interesset appellantur, vis et tation feugiat scripserit. Te nec noster suavitate persecuti. Diceret erroribus cu vix, alii omnes ei sit. Sea an corrumpit patrioque, virtute accumsan nominavi et usu, ex mei dolore vocibus incorrupte.
+						<div class="travel-place-container">
+							<div class="place-title">
+								<p>3. Odaiba</p>
+							</div>
+							<div class="place-photo-desc-container">
+								<div class="place-photo-container">
+									<img class="place-photo" src="img/Japan Odaiba.jpg">
+								</div>
+								<div class="place-description">
+									<p>Odaiba adalah sebuah pulau buatan di Teluk Tokyo, Jepang yang dihubungkan dengan pusat kota Tokyo dengan Jembatan Rainbow. Odaiba merupakan salah satu tujuan wisata di Tokyo, sekaligus lokasi pusat perbelanjaan dan permukiman.</p>
+								</div>
+							</div>
+							<div class="place-line-chart" id="odaiba-chart">
 
-                            Duo ea saperet tacimates. Sed possim prodesset no, per novum putent doctus ea. Eu mea magna aliquip graecis, pri corpora officiis complectitur ei, lorem saepe consetetur his ad. Meis consulatu ei vis, an altera ocurreret interesset qui.
+							</div>
+						</div>
 
-                            Eu ponderum comprehensam his, case antiopam pri te. Mel ne partem consequat instructior. Ad dicunt malorum sea, ex qui omnes invenire gubergren. Ius cu autem aliquando, pri vide ornatus perpetua an, no has epicuri verterem. Nam at animal pertinax efficiantur.
-                            Eu ponderum comprehensam his, case antiopam pri te. Mel ne partem consequat instructior. Ad dicunt malorum sea, ex qui omnes invenire gubergren. Ius cu autem aliquando, pri vide ornatus perpetua an, no has epicuri verterem. Nam at animal pertinax efficiantur.
-                            Eu ponderum comprehensam his, case antiopam pri te. Mel ne partem consequat instructior. Ad dicunt malorum sea, ex qui omnes invenire gubergren. Ius cu autem aliquando, pri vide ornatus perpetua an, no has epicuri verterem. Nam at animal pertinax efficiantur.
+						<div class="travel-place-container">
+							<div class="place-title">
+								<p>4. Tokyo Disneyland</p>
+							</div>
+							<div class="place-photo-desc-container">
+								<div class="place-photo-container">
+									<img class="place-photo" src="img/Japan Tokyo Disneyland.jpg">
+								</div>
+								<div class="place-description">
+									<p>Disneyland Tokyo adalah taman rekreasi Disneyland dengan luas mencapai 465,000 m² dan merupakan taman rekreasi dan resort Disney pertama yang dibangun di luar Amerika. Beberapa atraksinya termasuk Bazaar Dunia, Adventureland, Westernland, Critter Country, Fantasyland, Toon Town, dan Tomorrowland.</p>
+								</div>
+							</div>
+							<div class="place-line-chart" id="tokyo-disneyland-chart">
 
-                            Per alienum torquatos eu. 
+							</div>
+						</div>
 
-                            <h1 class="title-h1 center">
-                                Lorem Ipsum
-                            </h1>
-                            <br>
-                            <h5>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            </h5>
-                            <br>
-                            Eu nec ferri molestie consequat, vel at alia dolore putant. Labore philosophia ut vix. In vis nostrud interesset appellantur, vis et tation feugiat scripserit. Te nec noster suavitate persecuti. Diceret erroribus cu vix, alii omnes ei sit. Sea an corrumpit patrioque, virtute accumsan nominavi et usu, ex mei dolore vocibus incorrupte.
+						<div class="travel-place-container">
+							<div class="place-title">
+								<p>5. Universal Studio</p>
+							</div>
+							<div class="place-photo-desc-container">
+								<div class="place-photo-container">
+									<img class="place-photo" src="img/Japan Universal Studios.jpeg">
+								</div>
+								<div class="place-description">
+									<p>Universal Studios Japan, adalah sebuah taman bermain di Osaka, Jepang yang dibuka pada tahun 2001. Taman bermain ini merupakan taman bermain Universal Studios yang pertamakali yang dibuka di luar wilayah negara Amerika Serikat. Beberapa atraksinya termasuk Terminator 2, Jurassic Park, Amity Village, Waterworld, Harry Potter, dan banyak lagi.</p>
+								</div>
+							</div>
+							<div class="place-line-chart" id="universal-studio-chart">
 
-                            Duo ea saperet tacimates. Sed possim prodesset no, per novum putent doctus ea. Eu mea magna aliquip graecis, pri corpora officiis complectitur ei, lorem saepe consetetur his ad. Meis consulatu ei vis, an altera ocurreret interesset qui.
+							</div>
+						</div>
+					</div>
 
-                            Eu ponderum comprehensam his, case antiopam pri te. Mel ne partem consequat instructior. Ad dicunt malorum sea, ex qui omnes invenire gubergren. Ius cu autem aliquando, pri vide ornatus perpetua an, no has epicuri verterem. Nam at animal pertinax efficiantur.
-                            Eu ponderum comprehensam his, case antiopam pri te. Mel ne partem consequat instructior. Ad dicunt malorum sea, ex qui omnes invenire gubergren. Ius cu autem aliquando, pri vide ornatus perpetua an, no has epicuri verterem. Nam at animal pertinax efficiantur.
-                            Eu ponderum comprehensam his, case antiopam pri te. Mel ne partem consequat instructior. Ad dicunt malorum sea, ex qui omnes invenire gubergren. Ius cu autem aliquando, pri vide ornatus perpetua an, no has epicuri verterem. Nam at animal pertinax efficiantur.
+					<div class="travel-places-container" id="malaysia-places-container">
+						<div class="travel-place-container">
+							<div class="place-title">
+								<p>1. Batu Caves</p>
+							</div>
+							<div class="place-photo-desc-container">
+								<div class="place-photo-container">
+									<img class="place-photo" src="img/Malaysia Batu Caves.jpg">
+								</div>
+								<div class="place-description">
+									<p>Batu Caves, adalah sebuah bukit kapur, yang memiliki serangkaian gua dan kuil gua, terletak di distrik Gombak, Selangor, Malaysia. Tempat ini dinamai dari Sungai Batu, yang mengalir melewati bukit. Gua ini adalah salah satu kuil Hindu di luar Indiayang paling populer, yang didedikasikan untuk Dewa Murugan. Situs ini adalah titik fokus festival Hindu Thaipusamdi Malaysia.</p>
+								</div>
+							</div>
+							<div class="place-line-chart" id="batu-caves-chart">
 
-                            Per alienum torquatos eu. 
+							</div>
+						</div>
 
-                            <h1 class="title-h1 center">
-                                Lorem Ipsum
-                            </h1>
-                            <br>
-                            <h5>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            </h5>
-                            <br>
-                            Eu nec ferri molestie consequat, vel at alia dolore putant. Labore philosophia ut vix. In vis nostrud interesset appellantur, vis et tation feugiat scripserit. Te nec noster suavitate persecuti. Diceret erroribus cu vix, alii omnes ei sit. Sea an corrumpit patrioque, virtute accumsan nominavi et usu, ex mei dolore vocibus incorrupte.
+						<div class="travel-place-container">
+							<div class="place-title">
+								<p>2. Legoland Malaysia</p>
+							</div>
+							<div class="place-photo-desc-container">
+								<div class="place-photo-container">
+									<img class="place-photo" src="img/Malaysia Legoland.jpg">
+								</div>
+								<div class="place-description">
+									<p>Legoland Malaysia adalah taman hiburan yang dibuka di Nusajaya, Johor, Malaysia, pada tanggal 15 September 2012. Taman ini berisi 40 wahana interaktif, acara, dan atraksi. Ini adalah taman hiburan Legoland pertama di Asia. </p>
+								</div>
+							</div>
+							<div class="place-line-chart" id="legoland-chart">
 
-                            Duo ea saperet tacimates. Sed possim prodesset no, per novum putent doctus ea. Eu mea magna aliquip graecis, pri corpora officiis complectitur ei, lorem saepe consetetur his ad. Meis consulatu ei vis, an altera ocurreret interesset qui.
+							</div>
+						</div>
 
-                            Eu ponderum comprehensam his, case antiopam pri te. Mel ne partem consequat instructior. Ad dicunt malorum sea, ex qui omnes invenire gubergren. Ius cu autem aliquando, pri vide ornatus perpetua an, no has epicuri verterem. Nam at animal pertinax efficiantur.
-                            Eu ponderum comprehensam his, case antiopam pri te. Mel ne partem consequat instructior. Ad dicunt malorum sea, ex qui omnes invenire gubergren. Ius cu autem aliquando, pri vide ornatus perpetua an, no has epicuri verterem. Nam at animal pertinax efficiantur.
-                            Eu ponderum comprehensam his, case antiopam pri te. Mel ne partem consequat instructior. Ad dicunt malorum sea, ex qui omnes invenire gubergren. Ius cu autem aliquando, pri vide ornatus perpetua an, no has epicuri verterem. Nam at animal pertinax efficiantur.
+						<div class="travel-place-container">
+							<div class="place-title">
+								<p>3. Menara Petronas</p>
+							</div>
+							<div class="place-photo-desc-container">
+								<div class="place-photo-container">
+									<img class="place-photo" src="img/Malaysia Petronas.jpg">
+								</div>
+								<div class="place-description">
+									<p>Menara Petronas atau Menara Kembar Petronas di Kuala Lumpur, Malaysia adalah sepasang menara kembar yang pernah menjadi bangunan tertinggi di dunia pada tahun 1998—2004, sebelum dilampaui oleh Burj Khalifa dan Taipei 101.</p>
+								</div>
+							</div>
+							<div class="place-line-chart" id="petronas-chart">
 
-                            Per alienum torquatos eu. 
+							</div>
+						</div>
 
-                            <h1 class="title-h1 center">
-                                Lorem Ipsum
-                            </h1>
-                            <br>
-                            <h5>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            </h5>
-                            <br>
-                            Eu nec ferri molestie consequat, vel at alia dolore putant. Labore philosophia ut vix. In vis nostrud interesset appellantur, vis et tation feugiat scripserit. Te nec noster suavitate persecuti. Diceret erroribus cu vix, alii omnes ei sit. Sea an corrumpit patrioque, virtute accumsan nominavi et usu, ex mei dolore vocibus incorrupte.
+						<div class="travel-place-container">
+							<div class="place-title">
+								<p>4. Penang Hill</p>
+							</div>
+							<div class="place-photo-desc-container">
+								<div class="place-photo-container">
+									<img class="place-photo" src="img/Malaysia Penang Hill.jpg">
+								</div>
+								<div class="place-description">
+									<p>Setinggi 830 m di atas Georgetown, puncak Bukit Bendera (Bahasa Inggris: Penang Hill) menyediakan tempat nyaman yang memungkinkan pelancong-pelancong mengasingkan diri dari panas yang menggigit di bawahnya. Terdapat tamanbermain, pondok bergaya tua, restoran dan penginapan, sebuah kuil Hindu, serta Masjid Muslim di puncaknya.</p>
+								</div>
+							</div>
+							<div class="place-line-chart" id="penang-hill-chart">
 
-                            Duo ea saperet tacimates. Sed possim prodesset no, per novum putent doctus ea. Eu mea magna aliquip graecis, pri corpora officiis complectitur ei, lorem saepe consetetur his ad. Meis consulatu ei vis, an altera ocurreret interesset qui.
+							</div>
+						</div>
 
-                            Eu ponderum comprehensam his, case antiopam pri te. Mel ne partem consequat instructior. Ad dicunt malorum sea, ex qui omnes invenire gubergren. Ius cu autem aliquando, pri vide ornatus perpetua an, no has epicuri verterem. Nam at animal pertinax efficiantur.
-                            Eu ponderum comprehensam his, case antiopam pri te. Mel ne partem consequat instructior. Ad dicunt malorum sea, ex qui omnes invenire gubergren. Ius cu autem aliquando, pri vide ornatus perpetua an, no has epicuri verterem. Nam at animal pertinax efficiantur.
-                            Eu ponderum comprehensam his, case antiopam pri te. Mel ne partem consequat instructior. Ad dicunt malorum sea, ex qui omnes invenire gubergren. Ius cu autem aliquando, pri vide ornatus perpetua an, no has epicuri verterem. Nam at animal pertinax efficiantur.
+						<div class="travel-place-container">
+							<div class="place-title">
+								<p>5. Sunway Lagoon</p>
+							</div>
+							<div class="place-photo-desc-container">
+								<div class="place-photo-container">
+									<img class="place-photo" src="img/Malaysia Sunway Lagoon.jpg">
+								</div>
+								<div class="place-description">
+									<p>Sunway Lagoon adalah sebuah taman hiburan di Petaling Jaya, Malaysia yang dibuka pada 29 April 1993. Sunway Lagoon terletak di Sunway City, bertetangga dengan pusat perbelanjaan Sunway Pyramid di utara, Villa Villa yang indah di barat laut dan Sunway Hotel di timur laut. Awalnya, ini terdiri dari taman air, taman bermain dan taman binatang, tetapi kemudian ditambahkan dengan taman horor.</p>
+								</div>
+							</div>
+							<div class="place-line-chart" id="sunway-lagoon-chart">
 
-                            Per alienum torquatos eu. 
-                        </div>
-                    </div>
-                    
-                <!-- </div> -->
-            <!-- </div> -->
-        </div>
-    </div>
+							</div>
+						</div>
+					</div>
+-->
 
-  <!--   <div class="container-fluid">
-        <section class="box-intro">
-            <div class="table-cell">
-                <div class="row">
-                    <div class="col-md-6 col-md-offset-3">
-                        <h1 class="title-h1 center">
-                            Lorem Ipsum
-                        </h1>
-                        <br>
-                        <h5>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        </h5>
-                        <br>  
-                    </div>
-                </div>
-                <div id="regions_div" class="col-centered" style="width: 1000px; height: 300px;"></div>
-                <br>
-                <div id="linechart_material" class="col-centered" style="width: 1000px; height: 300px"></div>
-                
-            </div>
-        </section>
-    </div> -->
+					<div class="travel-places-container" id="thailand-places-container">
+						<div class="travel-place-container">
+							<div class="place-title">
+								<p>1. Grand Palace</p>
+							</div>
+							<div class="place-photo-desc-container">
+								<div class="place-photo-container">
+									<img class="place-photo" src="img/Thailand Grand Palace.jpg">
+								</div>
+								<div class="place-description">
+									<p>Istana Raja adalah kompleks bangunan istana di Bangkok, Thailand. Istana ini berfungsi sebagai kediaman resmi Raja-raja Thailand dari abad ke-18 dan seterusnya. Istana ini mulai dibangun pada tahun 1782, pada masa pemerintahan Raja Rama I. Meskipun tetap bergelar Istana Raja, Raja Thailand yang sekarang, Raja Bhumibol Adulyadej tidak berdiam di istana ini, dia tinggal di Istana Chitralada.</p>
+								</div>
+							</div>
+							<div class="place-line-chart" id="grand-palace-chart">
 
-<!--     <div class="container-fluid">
-        <section class="box-intro">
-            <div class="table-cell">
-                <div id="regions_div"></div>
-            </div>
-        </section>
-    </div> -->
-<!-- 
+							</div>
+						</div>
 
-    <div class="container-fluid">
-        <div class="box-intro box-contact">
-            <div class="table-cell">
-                <h3>
-                    lorem
-                </h3>
-            </div>
-        </div>
-    </div> -->
+						<div class="travel-place-container">
+							<div class="place-title">
+								<p>2. Khaosan Road</p>
+							</div>
+							<div class="place-photo-desc-container">
+								<div class="place-photo-container">
+									<img class="place-photo" src="img/Thailand Khaosan Road.jpg">
+								</div>
+								<div class="place-description">
+									<p>Khaosan Road dulu adalah tempat pasar beras Bangkok utama. Namun, dalam 20 tahun terakhir, Khaosan Road telah berkembang menjadi "backpacker ghetto" yang terkenal di dunia yang menawarkan tempat akomodasi murah. Dalam sebuah esai tentang budaya backpacker dari Khaosan Road, Susan Orlean menyebutnya "tempat untuk menghilang".</p>
+								</div>
+							</div>
+							<div class="place-line-chart" id="khaosan-chart">
 
-    <!-- footer -->
-    <footer>
-        <div class="container-fluid">
-            <p class="copyright">© 2018 – made with &#9749 by Sekar Atika Adam</p>
-        </div>
-    </footer>
-    <!-- end footer -->
+							</div>
+						</div>
 
+						<div class="travel-place-container">
+							<div class="place-title">
+								<p>3. Khao Yai National Park</p>
+							</div>
+							<div class="place-photo-desc-container">
+								<div class="place-photo-container">
+									<img class="place-photo" src="img/Thailand Khao Yai National Park.JPG">
+								</div>
+								<div class="place-description">
+									<p>Taman ini adalah yang terbesar ketiga di Thailand. Ini mencakup area seluas 300 kilometer persegi, termasuk hutan musiman tropis dan padang rumput. Ada 3.000 spesies tanaman, 320 jenis burung, dan 66 spesies mamalia. Air terjunnya termasuk Heo Narok setinggi 80 meter, dan Heo Suwat menjadi terkenal dari film The Beach.</p>
+								</div>
+							</div>
+							<div class="place-line-chart" id="khao-yai-chart">
+
+							</div>
+						</div>
+
+						<div class="travel-place-container">
+							<div class="place-title">
+								<p>4. MBK Center</p>
+							</div>
+							<div class="place-photo-desc-container">
+								<div class="place-photo-container">
+									<img class="place-photo" src="img/Thailand MBK Center.jpg">
+								</div>
+								<div class="place-description">
+									<p>MBK Center, juga dikenal dengan namai Mahboonkrong, adalah sebuah pusat perbelanjaan besar di Bangkok, Thailand. Dengan ketinggian delapan tingkat, pusat perbelanjaan ini berisi sekitar 2.000 toko, restoran, dan gerai layanan, termasuk 4 lantai Tokyu department store.</p>
+								</div>
+							</div>
+							<div class="place-line-chart" id="mbk-center-chart">
+
+							</div>
+						</div>
+
+						<div class="travel-place-container">
+							<div class="place-title">
+								<p>5. Phi Phi Islands</p>
+							</div>
+							<div class="place-photo-desc-container">
+								<div class="place-photo-container">
+									<img class="place-photo" src="img/Thailand Phi Phi Island.jpg">
+								</div>
+								<div class="place-description">
+									<p>Kepulauan Phi Phi terletak di antara pulau Phuketdan Thailand daratan. Ko Phi Phi Lee (pulau terbesar dalam kepulauan ini) menjadi pulau terkenal, setelah difiturkan dalam film The Beach. Pada 26 Desember 2004, Phi Phi Don hancur oleh tsunami akibat Gempa bumi Samudra Hindia. Pada 13 Mei 2005, hampir seluruh bisnis di pulau ini telah beroperasi kembali dengan alarm seluruh-pulau dan fasilitas keamanan.</p>
+								</div>
+							</div>
+							<div class="place-line-chart" id="phi-phi-chart">
+
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			
+		</div>
+	</div>
+
+	<!--   <div class="container-fluid">
+		<section class="box-intro">
+			<div class="table-cell">
+				<div class="row">
+					<div class="col-md-6 col-md-offset-3">
+						<h1 class="title-h1 center">
+							Lorem Ipsum
+						</h1>
+						<br>
+						<h5>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+						</h5>
+						<br>  
+					</div>
+				</div>
+				<div id="regions_div" class="col-centered" style="width: 1000px; height: 300px;"></div>
+				<br>
+				<div id="linechart_material" class="col-centered" style="width: 1000px; height: 300px"></div>
+
+			</div>
+		</section>
+	</div> -->
+
+	<!--     <div class="container-fluid">
+		<section class="box-intro">
+			<div class="table-cell">
+				<div id="regions_div"></div>
+			</div>
+		</section>
+	</div> -->
+	<!-- 
+
+	<div class="container-fluid">
+		<div class="box-intro box-contact">
+			<div class="table-cell">
+				<h3>
+					lorem
+				</h3>
+			</div>
+		</div>
+	</div> -->
+
+	<!-- footer -->
+	<footer>
+		<div class="container-fluid">
+			<p class="copyright">© 2018 – made with &#9749 by Sekar Atika Adam</p>
+		</div>
+	</footer>
+	<!-- end footer -->
 
 </body>
 
