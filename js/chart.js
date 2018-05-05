@@ -37,33 +37,108 @@ function drawOverallLineChart() {
 
 
 google.charts.load('current', {'packages':['corechart', 'line']});
-google.charts.setOnLoadCallback(drawLineChart);
+google.charts.setOnLoadCallback(drawLineChartHK);
 
-function drawLineChart() {
+$(window).load(function () {
+	$('select[name=selector]').change(function(){
+		if ($(this).val() == 'HK') {
+			google.charts.setOnLoadCallback(drawLineChartHK);
+	    } else if ($(this).val() == 'JP') {
+	    	google.charts.setOnLoadCallback(drawLineChartJP);
+	    } else if ($(this).val() == 'MY') {
+	    	google.charts.setOnLoadCallback(drawLineChartMY);
+	    } else if ($(this).val() == 'SG') {
+	    	google.charts.setOnLoadCallback(drawLineChartSG);
+	    } else if ($(this).val() == 'TH') {
+	    	google.charts.setOnLoadCallback(drawLineChartTH);
+	    }
+	});
+});
+
+function drawLineChartHK() {
+	console.log('hongkong');
+	var queryString = encodeURIComponent('SELECT A, B');
+	
+	var hk_places = ['hongkong-disneyland', 'madame-tussauds', 'lantau-island', 'ocean-park', 'tsim-sha-tsui'];
+	
+	for (idx = 0; idx < 5; idx++) {
+		var queryHK = new google.visualization.Query(
+			'https://docs.google.com/spreadsheets/d/1ABMC_UdmPd-mKMRAU3TaroXuEG0L5532Y3ZNGVYX1Qw/gviz/tq?sheet=' + hk_places[idx] + '&headers=1&tq=' +
+			queryString);
+	
+		sendQuery(queryHK, hk_places[idx]);
+	}
+}
+
+function drawLineChartJP() {
+
+	console.log('jap');
 	var queryString = encodeURIComponent('SELECT A, B');
 	
 	var jp_places = ['arashiyama', 'mount-fuji', 'odaiba', 'tokyo-disneyland', 'universal-studios-jp'];
-	var hk_places = ['hongkong-disneyland', 'madame-tussauds', 'lantau-island', 'ocean-park', 'tsim-sha-tsui'];
+	
+	for (idx = 0; idx < 5; idx++) {
+		var queryJP = new google.visualization.Query(
+			'https://docs.google.com/spreadsheets/d/1aym-PxZelUmjotpCmEkE37bf5JQ8sXqj5WRtqbyqvpU/gviz/tq?sheet=' + jp_places[idx] + '&headers=1&tq=' +
+			queryString);
+
+		sendQuery(queryJP, jp_places[idx]);
+	}
+}
+
+function drawLineChartMY() {
+
+	console.log('may');
+	var queryString = encodeURIComponent('SELECT A, B');
+	
 	var my_places = ['batu-caves', 'legoland', 'petronas', 'penang-hill', 'sunway-lagoon'];
-	var th_places = ['grand-palace', 'khaosan', 'khao-yai', 'mbk-center', 'phi-phi'];
+	
+	for (idx = 0; idx < 5; idx++) {
+		var queryMY = new google.visualization.Query(
+			'https://docs.google.com/spreadsheets/d/1nrYRMNXzjougp19mJVQldJHL5IwvMIaS3YzcojzLT_o/gviz/tq?sheet=' + my_places[idx] + '&headers=1&tq=' +
+			queryString);
+
+		sendQuery(queryMY, my_places[idx]);
+	}
+}
+
+function drawLineChartSG() {
+
+	console.log('sig');
+	var queryString = encodeURIComponent('SELECT A, B');
+	
 	var sg_places = ['universal-studios-sg', 'merlion', 'bugis', 'gardens-by-the-bay', 'marina-bay-sands'];
 	
 	for (idx = 0; idx < 5; idx++) {
-		var query = new google.visualization.Query(
-//			'https://docs.google.com/spreadsheets/d/1ABMC_UdmPd-mKMRAU3TaroXuEG0L5532Y3ZNGVYX1Qw/gviz/tq?sheet=' + hk_places[idx] + '&headers=1&tq=' +
-//			'https://docs.google.com/spreadsheets/d/1aym-PxZelUmjotpCmEkE37bf5JQ8sXqj5WRtqbyqvpU/gviz/tq?sheet=' + jp_places[idx] + '&headers=1&tq=' +
-//			'https://docs.google.com/spreadsheets/d/1nrYRMNXzjougp19mJVQldJHL5IwvMIaS3YzcojzLT_o/gviz/tq?sheet=' + my_places[idx] + '&headers=1&tq=' +
-//			'https://docs.google.com/spreadsheets/d/1nJ1_wqbHih5lEEsWz_fQv6xla937ECoSmerisSQuBe4/gviz/tq?sheet=' + sg_places[idx] + '&headers=1&tq=' +
+		var querySG = new google.visualization.Query(
+			'https://docs.google.com/spreadsheets/d/1nJ1_wqbHih5lEEsWz_fQv6xla937ECoSmerisSQuBe4/gviz/tq?sheet=' + sg_places[idx] + '&headers=1&tq=' +
+			queryString);
+		
+		sendQuery(querySG, sg_places[idx]);
+	}
+}
+
+function drawLineChartTH() {
+
+	console.log('thai');
+	var queryString = encodeURIComponent('SELECT A, B');
+	
+	var th_places = ['grand-palace', 'khaosan', 'khao-yai', 'mbk-center', 'phi-phi'];
+	
+	for (idx = 0; idx < 5; idx++) {
+		var queryTH = new google.visualization.Query(
 			'https://docs.google.com/spreadsheets/d/10GzDsBs59YP0ZKZXQYimAr3b43sPh9dpqg6S-kJnd3c/gviz/tq?sheet=' + th_places[idx] + '&headers=1&tq=' +
 			queryString);
 		
-//		sendQuery(query, hk_places[idx]);
-//		sendQuery(query, jp_places[idx]);
-//		sendQuery(query, my_places[idx]);
-//		sendQuery(query, sg_places[idx]);
-		sendQuery(query, th_places[idx]);
+		sendQuery(queryTH, th_places[idx]);
 	}
 }
+
+
+
+
+
+
 
 function sendQuery(query, place) {
 	query.send(function(response) {
@@ -76,6 +151,8 @@ function sendQuery(query, place) {
 		var data = response.getDataTable();
 		var chart = new google.visualization.LineChart(document.getElementById(id));
 		var options = {
+			// 'width':1100,
+			// 'height':140,
 			hAxis: {
 				title: 'Week'
 			},
