@@ -1,3 +1,47 @@
+// Geo Chart
+google.charts.load('current', {
+	'packages':['geochart'],
+	'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
+});
+google.charts.setOnLoadCallback(drawGeoChart);
+
+function drawGeoChart() {
+	var headerRow = ['Country', 'Search Trend'];
+	var dataRows = [["Japan",16], ["Singapore",31], ["Hongkong",89], ["Thailand",8], ["Malaysia",10], ["Japan",14], ["Singapore",27], ["Hongkong",81], ["Thailand",9], ["Malaysia",11], ["Japan",14], ["Singapore",27], ["Hongkong",90], ["Thailand",10], ["Malaysia",10], ["Japan",17], ["Singapore",29], ["Hongkong",97], ["Thailand",9], ["Malaysia",11], ["Japan",16], ["Singapore",25], ["Hongkong",90], ["Thailand",9], ["Malaysia",10], ["Japan",17], ["Singapore",27], ["Hongkong",87], ["Thailand",9], ["Malaysia",11], ["Japan",16], ["Singapore",28], ["Hongkong",95], ["Thailand",9], ["Malaysia",9], ["Japan",11], ["Singapore",25], ["Hongkong",89], ["Thailand",7], ["Malaysia",10], ["Japan",13], ["Singapore",25], ["Hongkong",87], ["Thailand",9], ["Malaysia",10], ["Japan",14], ["Singapore",25], ["Hongkong",88], ["Thailand",9], ["Malaysia",10], ["Japan",15], ["Singapore",33], ["Hongkong",91], ["Thailand",9], ["Malaysia",9], ["Japan",21], ["Singapore",36], ["Hongkong",100], ["Thailand",12], ["Malaysia",13], ["Japan",17], ["Singapore",32], ["Hongkong",85], ["Thailand",12], ["Malaysia",11], ["Japan",15], ["Singapore",31], ["Hongkong",91], ["Thailand",10], ["Malaysia",11], ["Japan",16], ["Singapore",29], ["Hongkong",89], ["Thailand",18], ["Malaysia",15], ["Japan",14], ["Singapore",28], ["Hongkong",84], ["Thailand",13], ["Malaysia",11], ["Japan",18], ["Singapore",25], ["Hongkong",84], ["Thailand",10], ["Malaysia",10], ["Japan",16], ["Singapore",23], ["Hongkong",83], ["Thailand",10], ["Malaysia",10], ["Japan",14], ["Singapore",26], ["Hongkong",83], ["Thailand",11], ["Malaysia",11], ["Japan",15], ["Singapore",27], ["Hongkong",80], ["Thailand",18], ["Malaysia",18], ["Japan",14], ["Singapore",28], ["Hongkong",88], ["Thailand",23], ["Malaysia",22], ["Japan",18], ["Singapore",26], ["Hongkong",83], ["Thailand",10], ["Malaysia",10], ["Japan",15], ["Singapore",29], ["Hongkong",79], ["Thailand",12], ["Malaysia",11], ["Japan",16], ["Singapore",30], ["Hongkong",84], ["Thailand",15], ["Malaysia",14], ["Japan",14], ["Singapore",26], ["Hongkong",82], ["Thailand",10], ["Malaysia",10], ["Japan",14], ["Singapore",26], ["Hongkong",87], ["Thailand",11], ["Malaysia",10], ["Japan",15], ["Singapore",23], ["Hongkong",84], ["Thailand",11], ["Malaysia",10], ["Japan",15], ["Singapore",26], ["Hongkong",81], ["Thailand",11], ["Malaysia",10], ["Japan",15], ["Singapore",26], ["Hongkong",87], ["Thailand",9], ["Malaysia",11], ["Japan",15], ["Singapore",26], ["Hongkong",82], ["Thailand",10], ["Malaysia",9], ["Japan",16], ["Singapore",29], ["Hongkong",82], ["Thailand",10], ["Malaysia",11], ["Japan",15], ["Singapore",30], ["Hongkong",80], ["Thailand",12], ["Malaysia",13], ["Japan",17], ["Singapore",27], ["Hongkong",78], ["Thailand",10], ["Malaysia",10], ["Japan",19], ["Singapore",31], ["Hongkong",85], ["Thailand",11], ["Malaysia",12], ["Japan",19], ["Singapore",30], ["Hongkong",75], ["Thailand",10], ["Malaysia",11], ["Japan",19], ["Singapore",28], ["Hongkong",78], ["Thailand",11], ["Malaysia",12], ["Japan",17], ["Singapore",30], ["Hongkong",84], ["Thailand",11], ["Malaysia",12], ["Japan",18], ["Singapore",30], ["Hongkong",84], ["Thailand",12], ["Malaysia",13], ["Japan",17], ["Singapore",34], ["Hongkong",80], ["Thailand",14], ["Malaysia",10], ["Japan",17], ["Singapore",29], ["Hongkong",74], ["Thailand",13], ["Malaysia",10], ["Japan",19], ["Singapore",33], ["Hongkong",78], ["Thailand",12], ["Malaysia",11], ["Japan",18], ["Singapore",27], ["Hongkong",74], ["Thailand",14], ["Malaysia",11], ["Japan",14], ["Singapore",27], ["Hongkong",76], ["Thailand",12], ["Malaysia",11], ["Japan",16], ["Singapore",30], ["Hongkong",79], ["Thailand",10], ["Malaysia",11], ["Japan",15], ["Singapore",26], ["Hongkong",76], ["Thailand",11], ["Malaysia",11], ["Japan",18], ["Singapore",28], ["Hongkong",76], ["Thailand",12], ["Malaysia",9], ["Japan",18], ["Singapore",31], ["Hongkong",78], ["Thailand",13], ["Malaysia",9], ["Japan",17], ["Singapore",27], ["Hongkong",75], ["Thailand",11], ["Malaysia",10], ["Japan",18], ["Singapore",30], ["Hongkong",76], ["Thailand",12], ["Malaysia",12], ["Japan",17], ["Singapore",28], ["Hongkong",77], ["Thailand",10], ["Malaysia",11], ["Japan",17], ["Singapore",26], ["Hongkong",79], ["Thailand",13], ["Malaysia",11], ["Japan",18], ["Singapore",27], ["Hongkong",83], ["Thailand",13], ["Malaysia",11]];
+	
+	var data = [];
+	var rowIdx = 0;
+	for (var i = 0; i < 52; i++) {
+		var rowData = [];
+		rowData.push(headerRow);
+		for (var j = 0; j < 5; j++) {
+			rowData.push(dataRows[rowIdx]);
+			rowIdx++;
+		}
+		data[i] = google.visualization.arrayToDataTable(rowData);
+	}
+
+	var current = 0;
+	var chart = new google.visualization.GeoChart(document.getElementById('geo-chart'));
+	var options = {
+		region: '142',
+		displayMode: 'markers',
+		animation: {
+			duration: 1000,
+			easing: 'out',
+		}
+	};
+	var dateSlider = document.getElementById('idxSlider');
+	chart.draw(data[current], options);
+    
+    dateSlider.oninput = function() {
+		current = this.value;
+		chart.draw(data[current], options);
+	}
+}
+
+
+// Line Chart
 google.charts.load('current', {'packages':['corechart', 'line']});
 google.charts.setOnLoadCallback(drawOverallLineChartHK);
 
@@ -36,7 +80,7 @@ function drawOverallLineChartTH() {
 		}
 
 		var data = response.getDataTable();
-		var chart = new google.visualization.LineChart(document.getElementById('linechart_material'));
+		var chart = new google.visualization.LineChart(document.getElementById('overall-linechart'));
 		var options = {
 			legend: {
 				position: 'top',
@@ -68,7 +112,7 @@ function drawOverallLineChartHK() {
 		}
 
 		var data = response.getDataTable();
-		var chart = new google.visualization.LineChart(document.getElementById('linechart_material'));
+		var chart = new google.visualization.LineChart(document.getElementById('overall-linechart'));
 		var options = {
 			legend: {
 				position: 'top',
@@ -79,7 +123,8 @@ function drawOverallLineChartHK() {
 			},
 			vAxis: {
 				title: 'Search Trend'
-			}
+			},
+			focusTarget: 'category'
 
 			// lineWidth: 10
 		};
@@ -100,7 +145,7 @@ function drawOverallLineChartJP() {
 		}
 
 		var data = response.getDataTable();
-		var chart = new google.visualization.LineChart(document.getElementById('linechart_material'));
+		var chart = new google.visualization.LineChart(document.getElementById('overall-linechart'));
 		var options = {
 			legend: {
 				position: 'top',
@@ -132,7 +177,7 @@ function drawOverallLineChartMY() {
 		}
 
 		var data = response.getDataTable();
-		var chart = new google.visualization.LineChart(document.getElementById('linechart_material'));
+		var chart = new google.visualization.LineChart(document.getElementById('overall-linechart'));
 		var options = {
 			legend: {
 				position: 'top',
@@ -164,7 +209,7 @@ function drawOverallLineChartSG() {
 		}
 
 		var data = response.getDataTable();
-		var chart = new google.visualization.LineChart(document.getElementById('linechart_material'));
+		var chart = new google.visualization.LineChart(document.getElementById('overall-linechart'));
 		var options = {
 			legend: {
 				position: 'top',
@@ -190,7 +235,7 @@ function drawLineChartHK() {
 	
 	var hk_places = ['hongkong-disneyland', 'madame-tussauds', 'lantau-island', 'ocean-park', 'tsim-sha-tsui'];
 	
-	for (idx = 0; idx < 5; idx++) {
+	for (var idx = 0; idx < 5; idx++) {
 		var queryHK = new google.visualization.Query(
 			'https://docs.google.com/spreadsheets/d/1ABMC_UdmPd-mKMRAU3TaroXuEG0L5532Y3ZNGVYX1Qw/gviz/tq?sheet=' + hk_places[idx] + '&headers=1&tq=' +
 			queryString);
@@ -206,7 +251,7 @@ function drawLineChartJP() {
 	
 	var jp_places = ['arashiyama', 'mount-fuji', 'odaiba', 'tokyo-disneyland', 'universal-studios-jp'];
 	
-	for (idx = 0; idx < 5; idx++) {
+	for (var idx = 0; idx < 5; idx++) {
 		var queryJP = new google.visualization.Query(
 			'https://docs.google.com/spreadsheets/d/1aym-PxZelUmjotpCmEkE37bf5JQ8sXqj5WRtqbyqvpU/gviz/tq?sheet=' + jp_places[idx] + '&headers=1&tq=' +
 			queryString);
@@ -222,7 +267,7 @@ function drawLineChartMY() {
 	
 	var my_places = ['batu-caves', 'legoland', 'petronas', 'penang-hill', 'sunway-lagoon'];
 	
-	for (idx = 0; idx < 5; idx++) {
+	for (var idx = 0; idx < 5; idx++) {
 		var queryMY = new google.visualization.Query(
 			'https://docs.google.com/spreadsheets/d/1nrYRMNXzjougp19mJVQldJHL5IwvMIaS3YzcojzLT_o/gviz/tq?sheet=' + my_places[idx] + '&headers=1&tq=' +
 			queryString);
@@ -238,7 +283,7 @@ function drawLineChartSG() {
 	
 	var sg_places = ['universal-studios-sg', 'merlion', 'bugis', 'gardens-by-the-bay', 'marina-bay-sands'];
 	
-	for (idx = 0; idx < 5; idx++) {
+	for (var idx = 0; idx < 5; idx++) {
 		var querySG = new google.visualization.Query(
 			'https://docs.google.com/spreadsheets/d/1nJ1_wqbHih5lEEsWz_fQv6xla937ECoSmerisSQuBe4/gviz/tq?sheet=' + sg_places[idx] + '&headers=1&tq=' +
 			queryString);
@@ -254,7 +299,7 @@ function drawLineChartTH() {
 	
 	var th_places = ['grand-palace', 'khaosan', 'khao-yai', 'mbk-center', 'phi-phi'];
 	
-	for (idx = 0; idx < 5; idx++) {
+	for (var idx = 0; idx < 5; idx++) {
 		var queryTH = new google.visualization.Query(
 			'https://docs.google.com/spreadsheets/d/10GzDsBs59YP0ZKZXQYimAr3b43sPh9dpqg6S-kJnd3c/gviz/tq?sheet=' + th_places[idx] + '&headers=1&tq=' +
 			queryString);

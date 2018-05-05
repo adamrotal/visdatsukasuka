@@ -51,76 +51,7 @@
 		});
 	</script>
 
-	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-	<script type="text/javascript">
-		google.charts.load('current', {
-			'packages':['geochart'],
-			'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
-		});
-		google.charts.setOnLoadCallback(drawRegionsMap);
-		
-		function drawRegionsMap() {
-			var data = google.visualization.arrayToDataTable([
-				['Country', 'Popularity'],
-				['Germany', 200],
-				['United States', 300],
-				['Brazil', 400],
-				['Canada', 500],
-				['France', 600],
-				['RU', 700]
-			]);
-
-			var options = {};
-
-			var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
-
-			chart.draw(data, options);
-		}
-	</script>
-
-<!--
-	<script type="text/javascript">
-		google.charts.load('current', {'packages':['line']});
-		google.charts.setOnLoadCallback(drawChart);
-
-		function drawChart() {
-			var data = new google.visualization.DataTable();
-			data.addColumn('number', 'Day');
-			data.addColumn('number', 'Guardians of the Galaxy');
-			data.addColumn('number', 'The Avengers');
-			data.addColumn('number', 'Transformers: Age of Extinction');
-
-			data.addRows([
-				[1,  37.8, 80.8, 41.8],
-				[2,  30.9, 69.5, 32.4],
-				[3,  25.4,   57, 25.7],
-				[4,  11.7, 18.8, 10.5],
-				[5,  11.9, 17.6, 10.4],
-				[6,   8.8, 13.6,  7.7],
-				[7,   7.6, 12.3,  9.6],
-				[8,  12.3, 29.2, 10.6],
-				[9,  16.9, 42.9, 14.8],
-				[10, 12.8, 30.9, 11.6],
-				[11,  5.3,  7.9,  4.7],
-				[12,  6.6,  8.4,  5.2],
-				[13,  4.8,  6.3,  3.6],
-				[14,  4.2,  6.2,  3.4]
-			]);
-
-			var options = {
-				chart: {
-					title: 'Box Office Earnings in First Two Weeks of Opening',
-					subtitle: 'in millions of dollars (USD)'
-				}
-			};
-
-			var chart = new google.charts.Line(document.getElementById('linechart_material'));
-
-			chart.draw(data, google.charts.Line.convertOptions(options));
-		}
-	</script>
--->
-	
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>	
 	<!-- Chart loader -->
 	<script type="text/javascript" src="js/chart.js"></script>
 
@@ -186,15 +117,18 @@
 
 		<div class="section" id="section1">
 			<div class="col-md-10 col-md-offset-1">
-				<div id="regions_div" class="col-centered" style="width: 1000px; height: 300px;"></div>
-                <br><br><br><br><br>
-                <p style="text-align: center; font-size: 14px;">
-                                <!-- cari tahu lebih -->
-                                <br>
-                                <a href="#3rdPage">
-                                    <img src="img/plane.png" alt="plane" style="width: 50px;">
-                                </a>
-                            </p>
+				<div id="geo-chart" class="col-centered" style="width: 1000px; height: 300px;"></div>
+				<div class="slider-container">
+					<input type="range" step="1" max="51" min="0" value="0" id="idxSlider"/>
+				</div>
+				<br><br><br>
+				<p style="text-align: center; font-size: 14px;">
+								<!-- cari tahu lebih -->
+								<br>
+								<a href="#3rdPage">
+									<img src="img/plane.png" alt="plane" style="width: 50px;">
+								</a>
+							</p>
 			</div>
 		</div>
 
@@ -215,7 +149,7 @@
 					</div>
 
                     <!-- <div class="col-md-10 col-md-offset-1"> -->
-                    <div id="linechart_material" class="col-centered" style="width: 100%; height: 200px"></div>
+                    <div id="overall-linechart" class="col-centered" style="width: 100%; height: 200px"></div>
                     <br>
                     <!-- </div> -->
                 </div>
