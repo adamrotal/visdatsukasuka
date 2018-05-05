@@ -6,7 +6,9 @@
 
 .travel-places-title p {
 	text-align: center;
-	font-size: 28px;
+	font-size: 32px;
+	font-family: 'Caveat', 'Karla', sans-serif;
+	color: black;
 }
 
 .travel-places-container {
@@ -28,6 +30,7 @@
 
 .place-title p {
 	font-size: 24px;
+	color: black;
 }
 
 .place-photo-desc-container {
