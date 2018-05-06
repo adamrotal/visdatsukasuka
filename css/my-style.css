@@ -1,3 +1,32 @@
+.slider-container {
+    position: absolute;
+	width: 885px;
+    top: 30px;
+    left: 30px;
+	z-index: 1;
+}
+
+.geo-chart-container {
+	width: 100%;
+}
+
+#geo-chart {
+	height: 525px;
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+}
+
+.custom-hr {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.flag-image {
+	height: 35px;
+	width: 55px;
+}
+
 .travel-places-title {
 	margin-top: 5%;
 	margin-bottom: 2.5%;

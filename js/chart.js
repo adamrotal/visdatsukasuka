@@ -29,11 +29,20 @@ function drawGeoChart() {
 		animation: {
 			duration: 1000,
 			easing: 'out',
+		},
+		magnifyingGlass: {
+			enable: true,
+			zoomFactor: 5.0
+		},
+		sizeAxis: {
+			minSize: 4,
+			maxSize: 24
 		}
 	};
+	
 	var dateSlider = document.getElementById('idxSlider');
 	chart.draw(data[current], options);
-    
+
     dateSlider.oninput = function() {
 		current = this.value;
 		chart.draw(data[current], options);
