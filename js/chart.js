@@ -35,8 +35,8 @@ function drawGeoChart() {
 			zoomFactor: 5.0
 		},
 		sizeAxis: {
-			minSize: 4,
-			maxSize: 24
+			minSize: 6,
+			maxSize: 36
 		}
 	};
 	
@@ -100,7 +100,8 @@ function drawOverallLineChartTH() {
 			},
 			vAxis: {
 				title: 'Search Trend'
-			}
+			},
+			colors: ['#64aae3', '#c56e94', '#ebc18c', '#8f8aba', '#a5d09f']
 
 			// lineWidth: 10
 		};
@@ -133,7 +134,7 @@ function drawOverallLineChartHK() {
 			vAxis: {
 				title: 'Search Trend'
 			},
-			focusTarget: 'category'
+			colors: ['#64aae3', '#c56e94', '#ebc18c', '#8f8aba', '#a5d09f']
 
 			// lineWidth: 10
 		};
@@ -165,7 +166,8 @@ function drawOverallLineChartJP() {
 			},
 			vAxis: {
 				title: 'Search Trend'
-			}
+			},
+			colors: ['#64aae3', '#c56e94', '#ebc18c', '#8f8aba', '#a5d09f']
 
 			// lineWidth: 10
 		};
@@ -197,7 +199,8 @@ function drawOverallLineChartMY() {
 			},
 			vAxis: {
 				title: 'Search Trend'
-			}
+			},
+			colors: ['#64aae3', '#c56e94', '#ebc18c', '#8f8aba', '#a5d09f']
 
 			// lineWidth: 10
 		};
@@ -229,7 +232,8 @@ function drawOverallLineChartSG() {
 			},
 			vAxis: {
 				title: 'Search Trend'
-			}
+			},
+			colors: ['#64aae3', '#c56e94', '#ebc18c', '#8f8aba', '#a5d09f']
 
 			// lineWidth: 10
 		};
@@ -317,12 +321,6 @@ function drawLineChartTH() {
 	}
 }
 
-
-
-
-
-
-
 function sendQuery(query, place) {
 	query.send(function(response) {
 		if (response.isError()) {
@@ -346,7 +344,19 @@ function sendQuery(query, place) {
 				title: 'Search Trend'
 			}
 		};
-
+		
+		if (place == 'phi-phi' || place == 'madame-tussauds' || place == 'mount-fuji' || place == 'legoland' || place == 'gardens-by-the-bay') {
+			options.colors = ['#64aae3'];
+		} else if (place == 'khao-yai' || place == 'hongkong-disneyland' || place == 'tokyo-disneyland' || place == 'petronas' || place == 'merlion') {
+			options.colors = ['#c56e94'];
+		} else if (place == 'grand-palace' || place == 'lantau-island' || place == 'universal-studios-jp' || place == 'sunway-lagoon' || place == 'universal-studios-sg') {
+			options.colors = ['#ebc18c'];
+		} else if (place == 'khaosan' || place == 'ocean-park' || place == 'arashiyama' || place == 'penang-hill' || place == 'marina-bay-sands') {
+			options.colors = ['#8f8aba'];
+		} else  if (place == 'mbk-center' || place == 'tsim-sha-tsui' || place == 'odaiba' || place == 'batu-caves' || place == 'bugis') {
+			options.colors = ['#a5d09f'];			
+		}
+		
 		chart.draw(data, options);
 	});
 }
