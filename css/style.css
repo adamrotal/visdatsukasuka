@@ -37,7 +37,7 @@
 html,
 body {
     height: 100%;
-    font-family: 'Karla', sans-serif;
+    font-family: 'Lora', sans-serif;
     line-height: 1.8;
     color: #464646
 }
@@ -1247,10 +1247,10 @@ textarea:focus {
     background-image: none
 }
 
-html, 
-body, 
-.carousel, 
-.carousel-inner, 
+html,
+body,
+.carousel,
+.carousel-inner,
 .carousel-inner .item {
   height: 100%;
 }

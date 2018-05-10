@@ -23,12 +23,14 @@
 	margin-top: 5%;
 	margin-bottom: 2.5%;
 	height: 5%;
+	position: sticky;
+	top: 0;
 }
 
 .travel-places-title p {
 	text-align: center;
-	font-size: 32px;
-	font-family: 'Caveat', 'Karla', sans-serif;
+	font-size: 28px;
+	font-family: 'Karla', sans-serif;
 	color: black;
 }
 
@@ -46,12 +48,12 @@
 .place-title {
 	width: 100%;
 	height: 10%;
-	margin-bottom: 1%;
+	margin-bottom: 2%;
 }
 
 .place-title p {
 	font-size: 24px;
-	color: black;
+	font-family: 'Karla', sans-serif;
 }
 
 .place-photo-desc-container {
