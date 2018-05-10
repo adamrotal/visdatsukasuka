@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
 	<meta charset="utf-8">
@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<title>Visdat Sukasuka</title>
-	<!-- <link rel="icon" href="img/fav.png" type="image/x-icon"> -->
+	 <link rel="icon" href="img/fav.png" type="image/x-icon">
 
 	<!-- Bootstrap -->
 	<link href="css/bootstrap.min.css" rel="stylesheet">
@@ -16,15 +16,15 @@
 	<!-- CSS Files -->
 	<link href="css/style.css" rel="stylesheet">
 	<link href="css/my-style.css" rel="stylesheet">
+	<link href="css/jquery.fullpage.min.css" rel="stylesheet">
 
-	<!-- emoji -->
+	<!-- Emoji -->
 	<link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
 
 </head>
-
 <body>
 
-    <!-- Preloader -->
+	<!-- Preloader -->
 	<div id="preloader">
 		<div class="pre-container">
 			<div class="spinner">
@@ -36,647 +36,616 @@
 	<!-- end Preloader -->
 
 	<div id="fullpage">
-		<div class="section" id="section0">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2">
-					<h1 class="title-h1 center">
-						Kemana Masyarakat Indonesia Ingin Berlibur?
-					</h1>
-					<h5>
-						--
-						<br>
-						menurut
-						<a href="https://trends.google.com/trends/" target="_blank">
-							<img src="img/google_trends_logo.png" alt="google trends" style="width: 100px;">
-						</a>
-					</h5>
-				</div>
-				<div class="col-md-6 col-md-offset-3">
-					<div class="justifyy">
-						<br>
-						Sejak tahun 2004, Google merekam semua pencarian yang dilakukan oleh penggunanya. Orang-orang mencari tempat berlibur di berbagai negara, mulai dari taman bermain hingga tempat berbelanja, museum hingga taman nasional.
-						<br><br>
-						Kami melihat ke dalam data search travel dari masyarakat Indonesia, pencarian mereka tentang infomasi wisata ke negara-negara lain. Berdasarkan data ini, kami mencoba mencari informasi mengenai minat liburan masyarakat Indonesia. Negara-negara apa saja yang diminati masyarakat Indonesia setahun terakhir ini? Tempat wisata apa yang menjadi tujuan utama mereka? Apakah mereka mencari taman bermain? Atau mencari kuil-kuil dan museum?
-						<br><br>
-					</div>
-					<b>
-						Kami ingin mengetahuinya, dan kami ingin berbagi mengenai penemuan kami!
-					</b>
-					<br><br><br><br>
-					<p style="text-align: center; font-size: 14px;">
-						<!-- cari tahu lebih -->
-						<br>
-						<a href="#secondPage">
-							<img src="img/plane.png" alt="plane" style="width: 50px;">
-						</a>
-					</p>
-				</div>
-			</div>
-		</div>
-
 		<div class="section" id="section1">
-			<div class="geo-chart-container">
-
+			<div class="slide" id="slide1">
 				<div class="row">
-				<div class="col-md-8">
-					<div id="geo-chart"></div>
-                    <form>
-
-                        <div class="slider">
-                            <div class="range">
-                                <input type="range" name="date" id="idxSlider" min="0" max="51" step="1" value="Please enter the year of build" required>
-                                <span class="setyear">0</span>
-                            </div>
-                        </div>
-
-                    </form>
-				</div>
-				<div class="col-md-4">
-					<div class="col-md-11">
-					<div class="row">
-							<p style="text-align: left; font-size: 24px; color: black; font-family: 'Caveat', 'Karla', sans-serif; text-align: center;">
-								5 Negara yang Paling Banyak Dicari oleh Orang Indonesia
-							</p>
-					</div><br>
-					<div class="row">
-						<div class="col-md-4 col-md-offset-8">
-							<p style="font-size: 12px; text-align: right">Rata-rata <i>trend</i> pencarian</p><hr style="margin-top: 0.5px;">
-						</div>
+					<div class="col-md-8 col-md-offset-2">
+						<h1 class="title-h1 center">
+							Kemana Masyarakat Indonesia Ingin Berlibur?
+						</h1>
+						<h5>
+							--
+							<br>
+							menurut
+							<a href="https://trends.google.com/trends/" target="_blank">
+								<img src="img/google_trends_logo.png" alt="google trends" style="width: 100px;">
+							</a>
+						</h5>
 					</div>
-					<div class="row">
-						<div class="col-md-2">
-							<img class="flag-image" src="img/Hongkong.png">
+					<div class="col-md-6 col-md-offset-3">
+						<div class="justifyy">
+							<br><br><br>
+							Sejak tahun 2004, Google merekam semua pencarian yang dilakukan oleh penggunanya. Orang-orang mencari tempat berlibur di berbagai negara, mulai dari taman bermain hingga tempat berbelanja, museum hingga taman nasional.
+							<br><br>
+							Kami melihat ke dalam data search travel dari masyarakat Indonesia, pencarian mereka tentang infomasi wisata ke negara-negara lain. Berdasarkan data ini, kami mencoba mencari informasi mengenai minat liburan masyarakat Indonesia. Negara-negara apa saja yang diminati masyarakat Indonesia setahun terakhir ini? Tempat wisata apa yang menjadi tujuan utama mereka? Apakah mereka mencari taman bermain? Atau mencari kuil-kuil dan museum?
+							<br><br>
 						</div>
-						<div class="col-md-6">
-							<p style="font-size: 16px;">&nbsp;&nbsp;&nbsp;&nbsp;Hongkong</p>
-						</div>
-						<div class="col-md-4">
-							<p style="font-size: 16px; text-align: right">83,21</p>
-						</div>
-					</div><hr class="custom-hr">
-					<div class="row">
-						<div class="col-md-2">
-							<img class="flag-image" src="img/Singapore.png">
-						</div>
-						<div class="col-md-6">
-							<p style="font-size: 16px;">&nbsp;&nbsp;&nbsp;&nbsp;Singapura</p>
-						</div>
-						<div class="col-md-4">
-							<p style="font-size: 16px; text-align: right">28,13</p>
-						</div>
-					</div><hr class="custom-hr">
-					<div class="row">
-						<div class="col-md-2">
-							<img class="flag-image" src="img/Japan.png">
-						</div>
-						<div class="col-md-6">
-							<p style="font-size: 16px;">&nbsp;&nbsp;&nbsp;&nbsp;Jepang</p>
-						</div>
-						<div class="col-md-4">
-							<p style="font-size: 16px; text-align: right">16,13</p>
-						</div>
-					</div><hr class="custom-hr">
-					<div class="row">
-						<div class="col-md-2">
-							<img class="flag-image" src="img/Thailand.png">
-						</div>
-						<div class="col-md-6">
-							<p style="font-size: 16px;">&nbsp;&nbsp;&nbsp;&nbsp;Thailand</p>
-						</div>
-						<div class="col-md-4">
-							<p style="font-size: 16px; text-align: right">11,35</p>
-						</div>
-					</div><hr class="custom-hr">
-					<div class="row">
-						<div class="col-md-2">
-							<img class="flag-image" src="img/Malaysia.png">
-						</div>
-						<div class="col-md-6">
-							<p style="font-size: 16px;">&nbsp;&nbsp;&nbsp;&nbsp;Malaysia</p>
-						</div>
-						<div class="col-md-4">
-							<p style="font-size: 16px; text-align: right">11,16</p>
-						</div>
+						<b>
+							Kami ingin mengetahuinya, dan kami ingin berbagi mengenai penemuan kami!
+						</b>
+						<br><br><br><br>
 					</div>
-					</div>
-				</div>
 				</div>
 			</div>
-			<p style="text-align: center; font-size: 14px;">
-				<!-- cari tahu lebih -->
-				<br>
-				<a href="#3rdPage">
-					<img src="img/plane.png" alt="plane" style="width: 50px;">
-				</a>
-			</p>
-		</div>
 
-		<div class="section" id="section2">
-			<div class="row">
-				<div class="col-md-10 col-md-offset-1">
-					<div class="travel-places-title">
-						<p>
-                            5 Tempat Wisata yang Paling Banyak Dicari oleh Orang Indonesia di
-							<select name="selector" id="selector">
-								<option value="HK" selected>Hong Kong</option>
-                                <option value="SG">Singapura</option>
-								<option value="JP">Jepang</option>
-								<option value="MY">Malaysia</option>
-								<option value="TH">Thailand</option>
-							</select>
-						</p>
-					</div>
-
-                    <!-- <div class="col-md-10 col-md-offset-1"> -->
-                    <div id="overall-linechart" class="col-centered" style="width: 100%; height: 200px"></div>
-                    <br>
-                    <!-- </div> -->
-                </div>
-
-                <div class="col-md-8 col-md-offset-2">
-					<div class="travel-places-container" id="hongkong-places-container">
-						<div class="travel-place-container">
-							<div class="place-title">
-								<p>1. Hong Kong Disneyland</p>
-							</div>
-							<div class="place-photo-desc-container">
-								<div class="place-photo-container">
-									<img class="place-photo" src="img/Hongkong Disneyland.png">
+			<div class="slide" id="slide2">
+				<div class="geo-chart-container">
+					<div class="row">
+						<div class="col-md-7 col-md-offset-1">
+							<h4>Tren Pencarian Negara dalam Kategori Travel oleh Indonesia</h4>
+							<div id="geo-chart"></div>
+							<form>
+								<div class="slider">
+									<div class="range">
+										<input type="range" name="date" id="idxSlider" min="0" max="51" step="1" value="Please enter the year of build" required>
+										<span class="setyear">0</span>
+									</div>
 								</div>
-								<div class="place-description">
-									<p>Hong Kong Disneyland adalah sebuah taman hiburan di Hong Kong Disneyland Resort. Taman ini dibuat oleh Walt Disney Company dan Pemerintah Hong Kong di tanah sebelah Teluk Penny, Pulau Lantau, Hong Kong. Beberapa tema atraksinya antara lain Main Street (USA), Fantasyland, Adventurland/Pirateland, Tomorrowland, Toy Story Land, Grizzy Gulch, dan Mystic Point.</p>
-								</div>
-							</div>
-							<div class="place-line-chart" id="hongkong-disneyland-chart">
-
-							</div>
+							</form>
 						</div>
-
-						<div class="travel-place-container">
-							<div class="place-title">
-								<p>2. Madame Tussauds Hong Kong</p>
-							</div>
-							<div class="place-photo-desc-container">
-								<div class="place-photo-container">
-									<img class="place-photo" src="img/Hongkong Madame Tussaud.jpeg">
-								</div>
-								<div class="place-description">
-									<p>Madame Tussauds Hong Kong, yang merupakan bagian dari jaringan museum lilin terkenal yang dibentuk oleh Marie Tussaud dari Perancis, terletak di Peak Tower, Pulau Hong Kong, Hong Kong. Museum tersebut merupakan museum Madame Tussauds pertama di Asia. Cabang Hong Kong menyimpan sekitar 100 patung lilin houses dari tokoh-tokoh yang terkenal di mancanegara.</p>
-								</div>
-							</div>
-							<div class="place-line-chart" id="madame-tussauds-chart">
-
-							</div>
-						</div>
-
-						<div class="travel-place-container">
-							<div class="place-title">
-								<p>3. Pulau Lantau</p>
-							</div>
-							<div class="place-photo-desc-container">
-								<div class="place-photo-container">
-									<img class="place-photo" src="img/Hongkong Lantau Island.jpg">
-								</div>
-								<div class="place-description">
-									<p>Pulau Lantau (juga Pulau Lantao; Tionghoa: 大嶼山) adalah pulau terbesar di Hong Kong, yang terletak di mulut Sungai Mutiara. Aslinya adalah tempat desa-desa nelayan, pulau tersebut dikembangkan pada tahun-tahun terkini dengan pembuatan Kota Baru Tung Chung di pesisir barat lautnya. Beberapa tempat wisata disana termasuk patung Buddha Tian Tan, kota nelayan Tai O, dan kereta gantung Ngong Ping 360.</p>
+						<div class="col-md-3">
+							<div class="col-md-12">
+							<div class="row">
+								<p style="text-align: left; font-size: 24px; color: black; font-family: 'Caveat', 'Karla', sans-serif; text-align: center;">
+									5 Negara yang Paling Banyak Dicari oleh Orang Indonesia
+								</p>
+							</div><br>
+							<div class="row">
+								<div class="col-md-4 col-md-offset-8">
+									<p style="font-size: 12px; text-align: right">Rata-rata <i>trend</i> pencarian</p><hr style="margin-top: 0.5px;">
 								</div>
 							</div>
-							<div class="place-line-chart" id="lantau-island-chart">
-
-							</div>
-						</div>
-
-						<div class="travel-place-container">
-							<div class="place-title">
-								<p>4. Ocean Park Hong Kong</p>
-							</div>
-							<div class="place-photo-desc-container">
-								<div class="place-photo-container">
-									<img class="place-photo" src="img/Hongkong Ocean Park.jpg">
+							<div class="row">
+								<div class="col-md-2">
+									<img class="flag-image" src="img/Hongkong.png">
 								</div>
-								<div class="place-description">
-									<p>Ocean Park Hong Kong adalah taman mamalia laut, oceanarium, taman bermain binatang, dan taman hiburan yang terletak di Wong Chuk Hang dan Nam Long Shan di Distrik Selatan Hong Kong. Ini, bersama dengan Hong Kong Disneyland, salah satu dari dua taman hiburan terbesar di Hong Kong.</p>
+								<div class="col-md-6">
+									<p style="font-size: 16px;">&nbsp;&nbsp;&nbsp;&nbsp;Hongkong</p>
+								</div>
+								<div class="col-md-4">
+									<p style="font-size: 16px; text-align: right">83,21</p>
+								</div>
+							</div><hr class="custom-hr">
+							<div class="row">
+								<div class="col-md-2">
+									<img class="flag-image" src="img/Singapore.png">
+								</div>
+								<div class="col-md-6">
+									<p style="font-size: 16px;">&nbsp;&nbsp;&nbsp;&nbsp;Singapura</p>
+								</div>
+								<div class="col-md-4">
+									<p style="font-size: 16px; text-align: right">28,13</p>
+								</div>
+							</div><hr class="custom-hr">
+							<div class="row">
+								<div class="col-md-2">
+									<img class="flag-image" src="img/Japan.png">
+								</div>
+								<div class="col-md-6">
+									<p style="font-size: 16px;">&nbsp;&nbsp;&nbsp;&nbsp;Jepang</p>
+								</div>
+								<div class="col-md-4">
+									<p style="font-size: 16px; text-align: right">16,13</p>
+								</div>
+							</div><hr class="custom-hr">
+							<div class="row">
+								<div class="col-md-2">
+									<img class="flag-image" src="img/Thailand.png">
+								</div>
+								<div class="col-md-6">
+									<p style="font-size: 16px;">&nbsp;&nbsp;&nbsp;&nbsp;Thailand</p>
+								</div>
+								<div class="col-md-4">
+									<p style="font-size: 16px; text-align: right">11,35</p>
+								</div>
+							</div><hr class="custom-hr">
+							<div class="row">
+								<div class="col-md-2">
+									<img class="flag-image" src="img/Malaysia.png">
+								</div>
+								<div class="col-md-6">
+									<p style="font-size: 16px;">&nbsp;&nbsp;&nbsp;&nbsp;Malaysia</p>
+								</div>
+								<div class="col-md-4">
+									<p style="font-size: 16px; text-align: right">11,16</p>
 								</div>
 							</div>
-							<div class="place-line-chart" id="ocean-park-chart">
-
-							</div>
-						</div>
-
-						<div class="travel-place-container">
-							<div class="place-title">
-								<p>5. Tsim Sha Tsui</p>
-							</div>
-							<div class="place-photo-desc-container">
-								<div class="place-photo-container">
-									<img class="place-photo" src="img/Hongkong Tsim Sha Tsui.jpg">
-								</div>
-								<div class="place-description">
-									<p>Lebih dari sekadar distrik, Tsim Sha Tsui adalah bazaar raksasa, di mana pelabuhan berkilauan di Hong Kong dipenuhi oleh kios, toko, pasar, dan mal. Di sini, Anda akan dapat jalan-jalan melewati memorabilia bertema Bollywood, mengunjungi penjahit Shanghai, makan di restoran bentuk  bemo yang cantik, melihat permata dan perhiasan yang cantik, dan toko merek internasional, dan butik label jalanan Asia.</p>
-								</div>
-							</div>
-							<div class="place-line-chart" id="tsim-sha-tsui-chart">
-
 							</div>
 						</div>
 					</div>
-
-
-
-					<div class="travel-places-container" id="japan-places-container">
-						<div class="travel-place-container">
-							<div class="place-title">
-								<p>1. Arashiyama</p>
-							</div>
-							<div class="place-photo-desc-container">
-								<div class="place-photo-container">
-									<img class="place-photo" src="img/Japan Arashiyama.jpg">
-								</div>
-								<div class="place-description">
-									<p>Arashiyama adalah distrik wisata paling penting kedua di Kyoto, dipenuhi dengan kuil dan tempat suci, tetapi daya tarik bintangnya adalah Hutan Bambu Arashiyama yang terkenal. Arashiyama berada di ujung barat Kyoto. Jaraknya yang cukup jauh dari pusat Kyoto: sekitar 30 menit perjalanan. Namun, perjalanan panjang ini worth it untuk sejumlah pemandangan hebat di sini.</p>
-								</div>
-							</div>
-							<div class="place-line-chart" id="arashiyama-chart">
-
-							</div>
-						</div>
-
-						<div class="travel-place-container">
-							<div class="place-title">
-								<p>2. Gunung Fuji</p>
-							</div>
-							<div class="place-photo-desc-container">
-								<div class="place-photo-container">
-									<img class="place-photo" src="img/Japan Mount Fuji.jpg">
-								</div>
-								<div class="place-description">
-									<p>Gunung Fuji adalah gunung tertinggi di Jepang, terletak di perbatasan Prefektur Shizuoka dan Yamanashi, di sebelah barat Tokyo. Gunung setinggi 3.776 m ini dikelilingi juga oleh lima danau yaitu Kawaguchi, Yamanaka, Sai, Motosu dan Shoji. Gunung Fuji diperkirakan terbentuk sekitar 10.000 tahun yang lalu.</p>
-								</div>
-							</div>
-							<div class="place-line-chart" id="mount-fuji-chart">
-
-							</div>
-						</div>
-
-						<div class="travel-place-container">
-							<div class="place-title">
-								<p>3. Odaiba</p>
-							</div>
-							<div class="place-photo-desc-container">
-								<div class="place-photo-container">
-									<img class="place-photo" src="img/Japan Odaiba.jpg">
-								</div>
-								<div class="place-description">
-									<p>Odaiba adalah sebuah pulau buatan di Teluk Tokyo, Jepang yang dihubungkan dengan pusat kota Tokyo dengan Jembatan Rainbow. Odaiba merupakan salah satu tujuan wisata di Tokyo, sekaligus lokasi pusat perbelanjaan dan permukiman.</p>
-								</div>
-							</div>
-							<div class="place-line-chart" id="odaiba-chart">
-
-							</div>
-						</div>
-
-						<div class="travel-place-container">
-							<div class="place-title">
-								<p>4. Tokyo Disneyland</p>
-							</div>
-							<div class="place-photo-desc-container">
-								<div class="place-photo-container">
-									<img class="place-photo" src="img/Japan Tokyo Disneyland.jpg">
-								</div>
-								<div class="place-description">
-									<p>Disneyland Tokyo adalah taman rekreasi Disneyland dengan luas mencapai 465,000 m² dan merupakan taman rekreasi dan resort Disney pertama yang dibangun di luar Amerika. Beberapa atraksinya termasuk Bazaar Dunia, Adventureland, Westernland, Critter Country, Fantasyland, Toon Town, dan Tomorrowland.</p>
-								</div>
-							</div>
-							<div class="place-line-chart" id="tokyo-disneyland-chart">
-
-							</div>
-						</div>
-
-						<div class="travel-place-container">
-							<div class="place-title">
-								<p>5. Universal Studios Japan</p>
-							</div>
-							<div class="place-photo-desc-container">
-								<div class="place-photo-container">
-									<img class="place-photo" src="img/Japan Universal Studios.jpeg">
-								</div>
-								<div class="place-description">
-									<p>Universal Studios Japan, adalah sebuah taman bermain di Osaka, Jepang yang dibuka pada tahun 2001. Taman bermain ini merupakan taman bermain Universal Studios yang pertamakali yang dibuka di luar wilayah negara Amerika Serikat. Beberapa atraksinya termasuk Terminator 2, Jurassic Park, Amity Village, Waterworld, Harry Potter, dan banyak lagi.</p>
-								</div>
-							</div>
-							<div class="place-line-chart" id="universal-studios-jp-chart">
-
-							</div>
-						</div>
-					</div>
-
-
-
-					<div class="travel-places-container" id="malaysia-places-container">
-						<div class="travel-place-container">
-							<div class="place-title">
-								<p>1. Batu Caves</p>
-							</div>
-							<div class="place-photo-desc-container">
-								<div class="place-photo-container">
-									<img class="place-photo" src="img/Malaysia Batu Caves.jpg">
-								</div>
-								<div class="place-description">
-									<p>Batu Caves, adalah sebuah bukit kapur, yang memiliki serangkaian gua dan kuil gua, terletak di distrik Gombak, Selangor, Malaysia. Tempat ini dinamai dari Sungai Batu, yang mengalir melewati bukit. Gua ini adalah salah satu kuil Hindu di luar Indiayang paling populer, yang didedikasikan untuk Dewa Murugan. Situs ini adalah titik fokus festival Hindu Thaipusamdi Malaysia.</p>
-								</div>
-							</div>
-							<div class="place-line-chart" id="batu-caves-chart">
-
-							</div>
-						</div>
-
-						<div class="travel-place-container">
-							<div class="place-title">
-								<p>2. Legoland Malaysia</p>
-							</div>
-							<div class="place-photo-desc-container">
-								<div class="place-photo-container">
-									<img class="place-photo" src="img/Malaysia Legoland.jpg">
-								</div>
-								<div class="place-description">
-									<p>Legoland Malaysia adalah taman hiburan yang dibuka di Nusajaya, Johor, Malaysia, pada tanggal 15 September 2012. Taman ini berisi 40 wahana interaktif, acara, dan atraksi. Ini adalah taman hiburan Legoland pertama di Asia. </p>
-								</div>
-							</div>
-							<div class="place-line-chart" id="legoland-chart">
-
-							</div>
-						</div>
-
-						<div class="travel-place-container">
-							<div class="place-title">
-								<p>3. Menara Petronas</p>
-							</div>
-							<div class="place-photo-desc-container">
-								<div class="place-photo-container">
-									<img class="place-photo" src="img/Malaysia Petronas.jpg">
-								</div>
-								<div class="place-description">
-									<p>Menara Petronas atau Menara Kembar Petronas di Kuala Lumpur, Malaysia adalah sepasang menara kembar yang pernah menjadi bangunan tertinggi di dunia pada tahun 1998—2004, sebelum dilampaui oleh Burj Khalifa dan Taipei 101.</p>
-								</div>
-							</div>
-							<div class="place-line-chart" id="petronas-chart">
-
-							</div>
-						</div>
-
-						<div class="travel-place-container">
-							<div class="place-title">
-								<p>4. Penang Hill</p>
-							</div>
-							<div class="place-photo-desc-container">
-								<div class="place-photo-container">
-									<img class="place-photo" src="img/Malaysia Penang Hill.jpg">
-								</div>
-								<div class="place-description">
-									<p>Setinggi 830 m di atas Georgetown, puncak Bukit Bendera (Bahasa Inggris: Penang Hill) menyediakan tempat nyaman yang memungkinkan pelancong-pelancong mengasingkan diri dari panas yang menggigit di bawahnya. Terdapat tamanbermain, pondok bergaya tua, restoran dan penginapan, sebuah kuil Hindu, serta Masjid Muslim di puncaknya.</p>
-								</div>
-							</div>
-							<div class="place-line-chart" id="penang-hill-chart">
-
-							</div>
-						</div>
-
-						<div class="travel-place-container">
-							<div class="place-title">
-								<p>5. Sunway Lagoon</p>
-							</div>
-							<div class="place-photo-desc-container">
-								<div class="place-photo-container">
-									<img class="place-photo" src="img/Malaysia Sunway Lagoon.jpg">
-								</div>
-								<div class="place-description">
-									<p>Sunway Lagoon adalah sebuah taman hiburan di Petaling Jaya, Malaysia yang dibuka pada 29 April 1993. Sunway Lagoon terletak di Sunway City, bertetangga dengan pusat perbelanjaan Sunway Pyramid di utara, Villa Villa yang indah di barat laut dan Sunway Hotel di timur laut. Awalnya, ini terdiri dari taman air, taman bermain dan taman binatang, tetapi kemudian ditambahkan dengan taman horor.</p>
-								</div>
-							</div>
-							<div class="place-line-chart" id="sunway-lagoon-chart">
-
-							</div>
-						</div>
-					</div>
-
-
-
-					<div class="travel-places-container" id="singapore-places-container">
-						<div class="travel-place-container">
-							<div class="place-title">
-								<p>1. Bugis, Singapore</p>
-							</div>
-							<div class="place-photo-desc-container">
-								<div class="place-photo-container">
-									<img class="place-photo" src="img/Singapore Bugis.jpg">
-								</div>
-								<div class="place-description">
-									<p>Bugis, di Singapura, terkenal secara internasional dari tahun 1950-an hingga 1980-an. Pada pertengahan 1980-an, Jalan Bugis mengalami pembangunan kembali kota besar menjadi kompleks ritel pusat perbelanjaan modern, restoran, dan tempat hiburan malam yang dipadukan dengan pedagang pinggir jalan yang diatur. Bugis Street sekarang disebut sebagai  "lokasi belanja jalan terbesar di Singapura".</p>
-								</div>
-							</div>
-							<div class="place-line-chart" id="bugis-chart">
-
-							</div>
-						</div>
-
-						<div class="travel-place-container">
-							<div class="place-title">
-								<p>2. Gardens by the Bay</p>
-							</div>
-							<div class="place-photo-desc-container">
-								<div class="place-photo-container">
-									<img class="place-photo" src="img/Singapore Gardens By The Bay.jpg">
-								</div>
-								<div class="place-description">
-									<p>Gardens by the Bay adalah taman yang mencakup 101 hektar (250 acre) di Singapura tengah, di sebelah Marina Bay. Taman ini terdiri dari tiga taman yang saling terhubung: Taman Teluk Selatan, Taman Teluk Timur dan Taman Bay Central di mana Taman Teluk Selatan adalah taman terbesar dengan luas 54 hektar (130 hektar).</p>
-								</div>
-							</div>
-							<div class="place-line-chart" id="gardens-by-the-bay-chart">
-
-							</div>
-						</div>
-
-						<div class="travel-place-container">
-							<div class="place-title">
-								<p>3. Marina Bay Sands</p>
-							</div>
-							<div class="place-photo-desc-container">
-								<div class="place-photo-container">
-									<img class="place-photo" src="img/Singapore Marina Bay Sands.jpg">
-								</div>
-								<div class="place-description">
-									<p>Marina Bay Sands adalah pusat hiburan terpadu, menghadap ke Teluk Marinadi Singapura. Dikembangkan oleh Las Vegas Sands. Tempat wisata ini memiliki 2.561 kamar hotel, ruang pameran dan pertemuan seluas 120.000m², mal The Shoppes dan ArtScience Museum, Sands Theatre dan Grand Theatre, tujuh restoran koki selebriti, dua pavilyun mengambang, kasino dengan lebih dari 600 meja judi dan 1.500 mesin jakpot. </p>
-								</div>
-							</div>
-							<div class="place-line-chart" id="marina-bay-sands-chart">
-
-							</div>
-						</div>
-
-						<div class="travel-place-container">
-							<div class="place-title">
-								<p>4. Merlion Park</p>
-							</div>
-							<div class="place-photo-desc-container">
-								<div class="place-photo-container">
-									<img class="place-photo" src="img/Singapore Merlion Park.jpg">
-								</div>
-								<div class="place-description">
-									<p>Taman Merlion, adalah landmark Singapura,, terletak di One Fullerton, Singapura, dekat Central Business District (CBD). Merlion adalah makhluk mistis dengan kepala singa dan tubuh ikan yang banyak digunakan sebagai maskot dan personifikasi nasional Singapura. Dua patung Merlion terletak di taman tersebut. Struktur Merlion asli berukuran 8,6 meter dan menyemburkan air dari mulutnya. </p>
-								</div>
-							</div>
-							<div class="place-line-chart" id="merlion-chart">
-
-							</div>
-						</div>
-
-						<div class="travel-place-container">
-							<div class="place-title">
-								<p>5. Universal Studios Singapore</p>
-							</div>
-							<div class="place-photo-desc-container">
-								<div class="place-photo-container">
-									<img class="place-photo" src="img/Singapore Universal Studio.jpg">
-								</div>
-								<div class="place-description">
-									<p>Universal Studios Singapore dibuka pada bulan Januari 2010, merupakan wahana bermain Universal Studios yang pertama kali dibuka di wilayah Asia Tenggara, dan merupakan yang kedua di wilayah Asiasetelah Universal Studios Japan. Taman bermain bertema film-film terkenal Hollywood produksi Universal Studios ini berlokasi di Pulau Sentosa, Singapura.</p>
-								</div>
-							</div>
-							<div class="place-line-chart" id="universal-studios-sg-chart">
-
-							</div>
-						</div>
-					</div>
-
-
-					<div class="travel-places-container" id="thailand-places-container">
-						<div class="travel-place-container">
-							<div class="place-title">
-								<p>1. Grand Palace</p>
-							</div>
-							<div class="place-photo-desc-container">
-								<div class="place-photo-container">
-									<img class="place-photo" src="img/Thailand Grand Palace.jpg">
-								</div>
-								<div class="place-description">
-									<p>Istana Raja adalah kompleks bangunan istana di Bangkok, Thailand. Istana ini berfungsi sebagai kediaman resmi Raja-raja Thailand dari abad ke-18 dan seterusnya. Istana ini mulai dibangun pada tahun 1782, pada masa pemerintahan Raja Rama I. Meskipun tetap bergelar Istana Raja, Raja Thailand yang sekarang, Raja Bhumibol Adulyadej tidak berdiam di istana ini, dia tinggal di Istana Chitralada.</p>
-								</div>
-							</div>
-							<div class="place-line-chart" id="grand-palace-chart">
-
-							</div>
-						</div>
-
-						<div class="travel-place-container">
-							<div class="place-title">
-								<p>2. Khaosan Road</p>
-							</div>
-							<div class="place-photo-desc-container">
-								<div class="place-photo-container">
-									<img class="place-photo" src="img/Thailand Khaosan Road.jpg">
-								</div>
-								<div class="place-description">
-									<p>Khaosan Road dulu adalah tempat pasar beras Bangkok utama. Namun, dalam 20 tahun terakhir, Khaosan Road telah berkembang menjadi "backpacker ghetto" yang terkenal di dunia yang menawarkan tempat akomodasi murah. Dalam sebuah esai tentang budaya backpacker dari Khaosan Road, Susan Orlean menyebutnya "tempat untuk menghilang".</p>
-								</div>
-							</div>
-							<div class="place-line-chart" id="khaosan-chart">
-
-							</div>
-						</div>
-
-						<div class="travel-place-container">
-							<div class="place-title">
-								<p>3. Khao Yai National Park</p>
-							</div>
-							<div class="place-photo-desc-container">
-								<div class="place-photo-container">
-									<img class="place-photo" src="img/Thailand Khao Yai National Park.JPG">
-								</div>
-								<div class="place-description">
-									<p>Taman ini adalah yang terbesar ketiga di Thailand. Ini mencakup area seluas 300 kilometer persegi, termasuk hutan musiman tropis dan padang rumput. Ada 3.000 spesies tanaman, 320 jenis burung, dan 66 spesies mamalia. Air terjunnya termasuk Heo Narok setinggi 80 meter, dan Heo Suwat menjadi terkenal dari film The Beach.</p>
-								</div>
-							</div>
-							<div class="place-line-chart" id="khao-yai-chart">
-
-							</div>
-						</div>
-
-						<div class="travel-place-container">
-							<div class="place-title">
-								<p>4. MBK Center</p>
-							</div>
-							<div class="place-photo-desc-container">
-								<div class="place-photo-container">
-									<img class="place-photo" src="img/Thailand MBK Center.jpg">
-								</div>
-								<div class="place-description">
-									<p>MBK Center, juga dikenal dengan namai Mahboonkrong, adalah sebuah pusat perbelanjaan besar di Bangkok, Thailand. Dengan ketinggian delapan tingkat, pusat perbelanjaan ini berisi sekitar 2.000 toko, restoran, dan gerai layanan, termasuk 4 lantai Tokyu department store.</p>
-								</div>
-							</div>
-							<div class="place-line-chart" id="mbk-center-chart">
-
-							</div>
-						</div>
-
-						<div class="travel-place-container">
-							<div class="place-title">
-								<p>5. Phi Phi Islands</p>
-							</div>
-							<div class="place-photo-desc-container">
-								<div class="place-photo-container">
-									<img class="place-photo" src="img/Thailand Phi Phi Island.jpg">
-								</div>
-								<div class="place-description">
-									<p>Kepulauan Phi Phi terletak di antara pulau Phuketdan Thailand daratan. Ko Phi Phi Lee (pulau terbesar dalam kepulauan ini) menjadi pulau terkenal, setelah difiturkan dalam film The Beach. Pada 26 Desember 2004, Phi Phi Don hancur oleh tsunami akibat Gempa bumi Samudra Hindia. Pada 13 Mei 2005, hampir seluruh bisnis di pulau ini telah beroperasi kembali dengan alarm seluruh-pulau dan fasilitas keamanan. </p>
-								</div>
-							</div>
-							<div class="place-line-chart" id="phi-phi-chart">
-
-							</div>
-						</div>
-					</div>
-                    <footer>
-                        <div class="container-fluid">
-                            <p class="copyright">© 2018 – made with &#9749 by Sekar; Atika; Adam</p>
-                        </div>
-                    </footer>
 				</div>
+			</div>
+
+			<div class="slide" id="slide3">
+				<div class="row">
+					<div class="col-md-10 col-md-offset-1">
+						<div class="travel-places-title">
+							<p>
+								5 Tempat Wisata yang Paling Banyak Dicari oleh Orang Indonesia di
+								<select name="selector" id="selector">
+									<option value="HK" selected>Hong Kong</option>
+									<option value="SG">Singapura</option>
+									<option value="JP">Jepang</option>
+									<option value="MY">Malaysia</option>
+									<option value="TH">Thailand</option>
+								</select>
+							</p>
+						</div>
+						<div id="overall-linechart" class="col-centered" style="width: 100%; height: 200px"></div><br>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2">
+						<div class="travel-places-container" id="hongkong-places-container">
+							<div class="travel-place-container">
+								<div class="place-title">
+									<p>1. Hong Kong Disneyland</p>
+								</div>
+								<div class="place-photo-desc-container">
+									<div class="place-photo-container">
+										<img class="place-photo" src="img/Hongkong Disneyland.png">
+									</div>
+									<div class="place-description">
+										<p>Hong Kong Disneyland adalah sebuah taman hiburan di Hong Kong Disneyland Resort. Taman ini dibuat oleh Walt Disney Company dan Pemerintah Hong Kong di tanah sebelah Teluk Penny, Pulau Lantau, Hong Kong. Beberapa tema atraksinya antara lain Main Street (USA), Fantasyland, Adventurland/Pirateland, Tomorrowland, Toy Story Land, Grizzy Gulch, dan Mystic Point.</p>
+									</div>
+								</div>
+								<div class="place-line-chart" id="hongkong-disneyland-chart"></div>
+							</div>
+
+							<div class="travel-place-container">
+								<div class="place-title">
+									<p>2. Madame Tussauds Hong Kong</p>
+								</div>
+								<div class="place-photo-desc-container">
+									<div class="place-photo-container">
+										<img class="place-photo" src="img/Hongkong Madame Tussaud.jpeg">
+									</div>
+									<div class="place-description">
+										<p>Madame Tussauds Hong Kong, yang merupakan bagian dari jaringan museum lilin terkenal yang dibentuk oleh Marie Tussaud dari Perancis, terletak di Peak Tower, Pulau Hong Kong, Hong Kong. Museum tersebut merupakan museum Madame Tussauds pertama di Asia. Cabang Hong Kong menyimpan sekitar 100 patung lilin houses dari tokoh-tokoh yang terkenal di mancanegara.</p>
+									</div>
+								</div>
+								<div class="place-line-chart" id="madame-tussauds-chart"></div>
+							</div>
+
+							<div class="travel-place-container">
+								<div class="place-title">
+									<p>3. Pulau Lantau</p>
+								</div>
+								<div class="place-photo-desc-container">
+									<div class="place-photo-container">
+										<img class="place-photo" src="img/Hongkong Lantau Island.jpg">
+									</div>
+									<div class="place-description">
+										<p>Pulau Lantau (juga Pulau Lantao; Tionghoa: 大嶼山) adalah pulau terbesar di Hong Kong, yang terletak di mulut Sungai Mutiara. Aslinya adalah tempat desa-desa nelayan, pulau tersebut dikembangkan pada tahun-tahun terkini dengan pembuatan Kota Baru Tung Chung di pesisir barat lautnya. Beberapa tempat wisata disana termasuk patung Buddha Tian Tan, kota nelayan Tai O, dan kereta gantung Ngong Ping 360.</p>
+									</div>
+								</div>
+								<div class="place-line-chart" id="lantau-island-chart"></div>
+							</div>
+
+							<div class="travel-place-container">
+								<div class="place-title">
+									<p>4. Ocean Park Hong Kong</p>
+								</div>
+								<div class="place-photo-desc-container">
+									<div class="place-photo-container">
+										<img class="place-photo" src="img/Hongkong Ocean Park.jpg">
+									</div>
+									<div class="place-description">
+										<p>Ocean Park Hong Kong adalah taman mamalia laut, oceanarium, taman bermain binatang, dan taman hiburan yang terletak di Wong Chuk Hang dan Nam Long Shan di Distrik Selatan Hong Kong. Ini, bersama dengan Hong Kong Disneyland, salah satu dari dua taman hiburan terbesar di Hong Kong.</p>
+									</div>
+								</div>
+								<div class="place-line-chart" id="ocean-park-chart"></div>
+							</div>
+
+							<div class="travel-place-container">
+								<div class="place-title">
+									<p>5. Tsim Sha Tsui</p>
+								</div>
+								<div class="place-photo-desc-container">
+									<div class="place-photo-container">
+										<img class="place-photo" src="img/Hongkong Tsim Sha Tsui.jpg">
+									</div>
+									<div class="place-description">
+										<p>Lebih dari sekadar distrik, Tsim Sha Tsui adalah bazaar raksasa, di mana pelabuhan berkilauan di Hong Kong dipenuhi oleh kios, toko, pasar, dan mal. Di sini, Anda akan dapat jalan-jalan melewati memorabilia bertema Bollywood, mengunjungi penjahit Shanghai, makan di restoran bentuk  bemo yang cantik, melihat permata dan perhiasan yang cantik, dan toko merek internasional, dan butik label jalanan Asia.</p>
+									</div>
+								</div>
+								<div class="place-line-chart" id="tsim-sha-tsui-chart"></div>
+							</div>
+						</div>
+
+
+
+						<div class="travel-places-container" id="japan-places-container">
+							<div class="travel-place-container">
+								<div class="place-title">
+									<p>1. Arashiyama</p>
+								</div>
+								<div class="place-photo-desc-container">
+									<div class="place-photo-container">
+										<img class="place-photo" src="img/Japan Arashiyama.jpg">
+									</div>
+									<div class="place-description">
+										<p>Arashiyama adalah distrik wisata paling penting kedua di Kyoto, dipenuhi dengan kuil dan tempat suci, tetapi daya tarik bintangnya adalah Hutan Bambu Arashiyama yang terkenal. Arashiyama berada di ujung barat Kyoto. Jaraknya yang cukup jauh dari pusat Kyoto: sekitar 30 menit perjalanan. Namun, perjalanan panjang ini worth it untuk sejumlah pemandangan hebat di sini.</p>
+									</div>
+								</div>
+								<div class="place-line-chart" id="arashiyama-chart">
+
+								</div>
+							</div>
+
+							<div class="travel-place-container">
+								<div class="place-title">
+									<p>2. Gunung Fuji</p>
+								</div>
+								<div class="place-photo-desc-container">
+									<div class="place-photo-container">
+										<img class="place-photo" src="img/Japan Mount Fuji.jpg">
+									</div>
+									<div class="place-description">
+										<p>Gunung Fuji adalah gunung tertinggi di Jepang, terletak di perbatasan Prefektur Shizuoka dan Yamanashi, di sebelah barat Tokyo. Gunung setinggi 3.776 m ini dikelilingi juga oleh lima danau yaitu Kawaguchi, Yamanaka, Sai, Motosu dan Shoji. Gunung Fuji diperkirakan terbentuk sekitar 10.000 tahun yang lalu.</p>
+									</div>
+								</div>
+								<div class="place-line-chart" id="mount-fuji-chart">
+
+								</div>
+							</div>
+
+							<div class="travel-place-container">
+								<div class="place-title">
+									<p>3. Odaiba</p>
+								</div>
+								<div class="place-photo-desc-container">
+									<div class="place-photo-container">
+										<img class="place-photo" src="img/Japan Odaiba.jpg">
+									</div>
+									<div class="place-description">
+										<p>Odaiba adalah sebuah pulau buatan di Teluk Tokyo, Jepang yang dihubungkan dengan pusat kota Tokyo dengan Jembatan Rainbow. Odaiba merupakan salah satu tujuan wisata di Tokyo, sekaligus lokasi pusat perbelanjaan dan permukiman.</p>
+									</div>
+								</div>
+								<div class="place-line-chart" id="odaiba-chart">
+
+								</div>
+							</div>
+
+							<div class="travel-place-container">
+								<div class="place-title">
+									<p>4. Tokyo Disneyland</p>
+								</div>
+								<div class="place-photo-desc-container">
+									<div class="place-photo-container">
+										<img class="place-photo" src="img/Japan Tokyo Disneyland.jpg">
+									</div>
+									<div class="place-description">
+										<p>Disneyland Tokyo adalah taman rekreasi Disneyland dengan luas mencapai 465,000 m² dan merupakan taman rekreasi dan resort Disney pertama yang dibangun di luar Amerika. Beberapa atraksinya termasuk Bazaar Dunia, Adventureland, Westernland, Critter Country, Fantasyland, Toon Town, dan Tomorrowland.</p>
+									</div>
+								</div>
+								<div class="place-line-chart" id="tokyo-disneyland-chart">
+
+								</div>
+							</div>
+
+							<div class="travel-place-container">
+								<div class="place-title">
+									<p>5. Universal Studios Japan</p>
+								</div>
+								<div class="place-photo-desc-container">
+									<div class="place-photo-container">
+										<img class="place-photo" src="img/Japan Universal Studios.jpeg">
+									</div>
+									<div class="place-description">
+										<p>Universal Studios Japan, adalah sebuah taman bermain di Osaka, Jepang yang dibuka pada tahun 2001. Taman bermain ini merupakan taman bermain Universal Studios yang pertamakali yang dibuka di luar wilayah negara Amerika Serikat. Beberapa atraksinya termasuk Terminator 2, Jurassic Park, Amity Village, Waterworld, Harry Potter, dan banyak lagi.</p>
+									</div>
+								</div>
+								<div class="place-line-chart" id="universal-studios-jp-chart">
+
+								</div>
+							</div>
+						</div>
+
+
+
+						<div class="travel-places-container" id="malaysia-places-container">
+							<div class="travel-place-container">
+								<div class="place-title">
+									<p>1. Batu Caves</p>
+								</div>
+								<div class="place-photo-desc-container">
+									<div class="place-photo-container">
+										<img class="place-photo" src="img/Malaysia Batu Caves.jpg">
+									</div>
+									<div class="place-description">
+										<p>Batu Caves, adalah sebuah bukit kapur, yang memiliki serangkaian gua dan kuil gua, terletak di distrik Gombak, Selangor, Malaysia. Tempat ini dinamai dari Sungai Batu, yang mengalir melewati bukit. Gua ini adalah salah satu kuil Hindu di luar Indiayang paling populer, yang didedikasikan untuk Dewa Murugan. Situs ini adalah titik fokus festival Hindu Thaipusamdi Malaysia.</p>
+									</div>
+								</div>
+								<div class="place-line-chart" id="batu-caves-chart">
+
+								</div>
+							</div>
+
+							<div class="travel-place-container">
+								<div class="place-title">
+									<p>2. Legoland Malaysia</p>
+								</div>
+								<div class="place-photo-desc-container">
+									<div class="place-photo-container">
+										<img class="place-photo" src="img/Malaysia Legoland.jpg">
+									</div>
+									<div class="place-description">
+										<p>Legoland Malaysia adalah taman hiburan yang dibuka di Nusajaya, Johor, Malaysia, pada tanggal 15 September 2012. Taman ini berisi 40 wahana interaktif, acara, dan atraksi. Ini adalah taman hiburan Legoland pertama di Asia. </p>
+									</div>
+								</div>
+								<div class="place-line-chart" id="legoland-chart">
+
+								</div>
+							</div>
+
+							<div class="travel-place-container">
+								<div class="place-title">
+									<p>3. Menara Petronas</p>
+								</div>
+								<div class="place-photo-desc-container">
+									<div class="place-photo-container">
+										<img class="place-photo" src="img/Malaysia Petronas.jpg">
+									</div>
+									<div class="place-description">
+										<p>Menara Petronas atau Menara Kembar Petronas di Kuala Lumpur, Malaysia adalah sepasang menara kembar yang pernah menjadi bangunan tertinggi di dunia pada tahun 1998—2004, sebelum dilampaui oleh Burj Khalifa dan Taipei 101.</p>
+									</div>
+								</div>
+								<div class="place-line-chart" id="petronas-chart">
+
+								</div>
+							</div>
+
+							<div class="travel-place-container">
+								<div class="place-title">
+									<p>4. Penang Hill</p>
+								</div>
+								<div class="place-photo-desc-container">
+									<div class="place-photo-container">
+										<img class="place-photo" src="img/Malaysia Penang Hill.jpg">
+									</div>
+									<div class="place-description">
+										<p>Setinggi 830 m di atas Georgetown, puncak Bukit Bendera (Bahasa Inggris: Penang Hill) menyediakan tempat nyaman yang memungkinkan pelancong-pelancong mengasingkan diri dari panas yang menggigit di bawahnya. Terdapat tamanbermain, pondok bergaya tua, restoran dan penginapan, sebuah kuil Hindu, serta Masjid Muslim di puncaknya.</p>
+									</div>
+								</div>
+								<div class="place-line-chart" id="penang-hill-chart">
+
+								</div>
+							</div>
+
+							<div class="travel-place-container">
+								<div class="place-title">
+									<p>5. Sunway Lagoon</p>
+								</div>
+								<div class="place-photo-desc-container">
+									<div class="place-photo-container">
+										<img class="place-photo" src="img/Malaysia Sunway Lagoon.jpg">
+									</div>
+									<div class="place-description">
+										<p>Sunway Lagoon adalah sebuah taman hiburan di Petaling Jaya, Malaysia yang dibuka pada 29 April 1993. Sunway Lagoon terletak di Sunway City, bertetangga dengan pusat perbelanjaan Sunway Pyramid di utara, Villa Villa yang indah di barat laut dan Sunway Hotel di timur laut. Awalnya, ini terdiri dari taman air, taman bermain dan taman binatang, tetapi kemudian ditambahkan dengan taman horor.</p>
+									</div>
+								</div>
+								<div class="place-line-chart" id="sunway-lagoon-chart">
+
+								</div>
+							</div>
+						</div>
+
+
+
+						<div class="travel-places-container" id="singapore-places-container">
+							<div class="travel-place-container">
+								<div class="place-title">
+									<p>1. Bugis, Singapore</p>
+								</div>
+								<div class="place-photo-desc-container">
+									<div class="place-photo-container">
+										<img class="place-photo" src="img/Singapore Bugis.jpg">
+									</div>
+									<div class="place-description">
+										<p>Bugis, di Singapura, terkenal secara internasional dari tahun 1950-an hingga 1980-an. Pada pertengahan 1980-an, Jalan Bugis mengalami pembangunan kembali kota besar menjadi kompleks ritel pusat perbelanjaan modern, restoran, dan tempat hiburan malam yang dipadukan dengan pedagang pinggir jalan yang diatur. Bugis Street sekarang disebut sebagai  "lokasi belanja jalan terbesar di Singapura".</p>
+									</div>
+								</div>
+								<div class="place-line-chart" id="bugis-chart">
+
+								</div>
+							</div>
+
+							<div class="travel-place-container">
+								<div class="place-title">
+									<p>2. Gardens by the Bay</p>
+								</div>
+								<div class="place-photo-desc-container">
+									<div class="place-photo-container">
+										<img class="place-photo" src="img/Singapore Gardens By The Bay.jpg">
+									</div>
+									<div class="place-description">
+										<p>Gardens by the Bay adalah taman yang mencakup 101 hektar (250 acre) di Singapura tengah, di sebelah Marina Bay. Taman ini terdiri dari tiga taman yang saling terhubung: Taman Teluk Selatan, Taman Teluk Timur dan Taman Bay Central di mana Taman Teluk Selatan adalah taman terbesar dengan luas 54 hektar (130 hektar).</p>
+									</div>
+								</div>
+								<div class="place-line-chart" id="gardens-by-the-bay-chart">
+
+								</div>
+							</div>
+
+							<div class="travel-place-container">
+								<div class="place-title">
+									<p>3. Marina Bay Sands</p>
+								</div>
+								<div class="place-photo-desc-container">
+									<div class="place-photo-container">
+										<img class="place-photo" src="img/Singapore Marina Bay Sands.jpg">
+									</div>
+									<div class="place-description">
+										<p>Marina Bay Sands adalah pusat hiburan terpadu, menghadap ke Teluk Marinadi Singapura. Dikembangkan oleh Las Vegas Sands. Tempat wisata ini memiliki 2.561 kamar hotel, ruang pameran dan pertemuan seluas 120.000m², mal The Shoppes dan ArtScience Museum, Sands Theatre dan Grand Theatre, tujuh restoran koki selebriti, dua pavilyun mengambang, kasino dengan lebih dari 600 meja judi dan 1.500 mesin jakpot. </p>
+									</div>
+								</div>
+								<div class="place-line-chart" id="marina-bay-sands-chart">
+
+								</div>
+							</div>
+
+							<div class="travel-place-container">
+								<div class="place-title">
+									<p>4. Merlion Park</p>
+								</div>
+								<div class="place-photo-desc-container">
+									<div class="place-photo-container">
+										<img class="place-photo" src="img/Singapore Merlion Park.jpg">
+									</div>
+									<div class="place-description">
+										<p>Taman Merlion, adalah landmark Singapura,, terletak di One Fullerton, Singapura, dekat Central Business District (CBD). Merlion adalah makhluk mistis dengan kepala singa dan tubuh ikan yang banyak digunakan sebagai maskot dan personifikasi nasional Singapura. Dua patung Merlion terletak di taman tersebut. Struktur Merlion asli berukuran 8,6 meter dan menyemburkan air dari mulutnya. </p>
+									</div>
+								</div>
+								<div class="place-line-chart" id="merlion-chart">
+
+								</div>
+							</div>
+
+							<div class="travel-place-container">
+								<div class="place-title">
+									<p>5. Universal Studios Singapore</p>
+								</div>
+								<div class="place-photo-desc-container">
+									<div class="place-photo-container">
+										<img class="place-photo" src="img/Singapore Universal Studio.jpg">
+									</div>
+									<div class="place-description">
+										<p>Universal Studios Singapore dibuka pada bulan Januari 2010, merupakan wahana bermain Universal Studios yang pertama kali dibuka di wilayah Asia Tenggara, dan merupakan yang kedua di wilayah Asiasetelah Universal Studios Japan. Taman bermain bertema film-film terkenal Hollywood produksi Universal Studios ini berlokasi di Pulau Sentosa, Singapura.</p>
+									</div>
+								</div>
+								<div class="place-line-chart" id="universal-studios-sg-chart">
+
+								</div>
+							</div>
+						</div>
+
+
+						<div class="travel-places-container" id="thailand-places-container">
+							<div class="travel-place-container">
+								<div class="place-title">
+									<p>1. Grand Palace</p>
+								</div>
+								<div class="place-photo-desc-container">
+									<div class="place-photo-container">
+										<img class="place-photo" src="img/Thailand Grand Palace.jpg">
+									</div>
+									<div class="place-description">
+										<p>Istana Raja adalah kompleks bangunan istana di Bangkok, Thailand. Istana ini berfungsi sebagai kediaman resmi Raja-raja Thailand dari abad ke-18 dan seterusnya. Istana ini mulai dibangun pada tahun 1782, pada masa pemerintahan Raja Rama I. Meskipun tetap bergelar Istana Raja, Raja Thailand yang sekarang, Raja Bhumibol Adulyadej tidak berdiam di istana ini, dia tinggal di Istana Chitralada.</p>
+									</div>
+								</div>
+								<div class="place-line-chart" id="grand-palace-chart">
+
+								</div>
+							</div>
+
+							<div class="travel-place-container">
+								<div class="place-title">
+									<p>2. Khaosan Road</p>
+								</div>
+								<div class="place-photo-desc-container">
+									<div class="place-photo-container">
+										<img class="place-photo" src="img/Thailand Khaosan Road.jpg">
+									</div>
+									<div class="place-description">
+										<p>Khaosan Road dulu adalah tempat pasar beras Bangkok utama. Namun, dalam 20 tahun terakhir, Khaosan Road telah berkembang menjadi "backpacker ghetto" yang terkenal di dunia yang menawarkan tempat akomodasi murah. Dalam sebuah esai tentang budaya backpacker dari Khaosan Road, Susan Orlean menyebutnya "tempat untuk menghilang".</p>
+									</div>
+								</div>
+								<div class="place-line-chart" id="khaosan-chart">
+
+								</div>
+							</div>
+
+							<div class="travel-place-container">
+								<div class="place-title">
+									<p>3. Khao Yai National Park</p>
+								</div>
+								<div class="place-photo-desc-container">
+									<div class="place-photo-container">
+										<img class="place-photo" src="img/Thailand Khao Yai National Park.JPG">
+									</div>
+									<div class="place-description">
+										<p>Taman ini adalah yang terbesar ketiga di Thailand. Ini mencakup area seluas 300 kilometer persegi, termasuk hutan musiman tropis dan padang rumput. Ada 3.000 spesies tanaman, 320 jenis burung, dan 66 spesies mamalia. Air terjunnya termasuk Heo Narok setinggi 80 meter, dan Heo Suwat menjadi terkenal dari film The Beach.</p>
+									</div>
+								</div>
+								<div class="place-line-chart" id="khao-yai-chart">
+
+								</div>
+							</div>
+
+							<div class="travel-place-container">
+								<div class="place-title">
+									<p>4. MBK Center</p>
+								</div>
+								<div class="place-photo-desc-container">
+									<div class="place-photo-container">
+										<img class="place-photo" src="img/Thailand MBK Center.jpg">
+									</div>
+									<div class="place-description">
+										<p>MBK Center, juga dikenal dengan namai Mahboonkrong, adalah sebuah pusat perbelanjaan besar di Bangkok, Thailand. Dengan ketinggian delapan tingkat, pusat perbelanjaan ini berisi sekitar 2.000 toko, restoran, dan gerai layanan, termasuk 4 lantai Tokyu department store.</p>
+									</div>
+								</div>
+								<div class="place-line-chart" id="mbk-center-chart">
+
+								</div>
+							</div>
+
+							<div class="travel-place-container">
+								<div class="place-title">
+									<p>5. Phi Phi Islands</p>
+								</div>
+								<div class="place-photo-desc-container">
+									<div class="place-photo-container">
+										<img class="place-photo" src="img/Thailand Phi Phi Island.jpg">
+									</div>
+									<div class="place-description">
+										<p>Kepulauan Phi Phi terletak di antara pulau Phuketdan Thailand daratan. Ko Phi Phi Lee (pulau terbesar dalam kepulauan ini) menjadi pulau terkenal, setelah difiturkan dalam film The Beach. Pada 26 Desember 2004, Phi Phi Don hancur oleh tsunami akibat Gempa bumi Samudra Hindia. Pada 13 Mei 2005, hampir seluruh bisnis di pulau ini telah beroperasi kembali dengan alarm seluruh-pulau dan fasilitas keamanan. </p>
+									</div>
+								</div>
+								<div class="place-line-chart" id="phi-phi-chart">
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<footer>
+					<div class="container-fluid">
+						<p class="copyright">© 2018 – made with &#9749 by Sekar; Atika; Adam</p>
+					</div>
+				</footer>
 			</div>
 		</div>
 	</div>
 
-	<!-- modernizr -->
-	<script src="js/modernizr.js"></script>
-
 	<!-- jQuery -->
-	<script src="js/jquery-2.1.1.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<!--  custom script -->
-	<script src="js/custom.js"></script>
-
-	<!-- fullPage -->
-	<link rel="stylesheet" type="text/css" href="css/jquery.fullpage.min.css" />
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
 
 	<script type="text/javascript" src="js/scrolloverflow.min.js"></script>
-
-	<script type="text/javascript" src="js/jquery.fullpage.min.js"></script>
-	<!-- <script type="text/javascript" src="examples.js"></script> -->
+	<script type="text/javascript" src="js/jquery.fullPage.min.js"></script>
+	<script type="text/javascript" src="js/examples.js"></script>
 
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$('#fullpage').fullpage({
-				anchors: ['firstPage', 'secondPage', '3rdPage'],
-				// sectionsColor: ['#4A6FB1','#323539'],
+				anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage'],
 				scrollOverflow: true,
-				navigation: true,
-				navigationPosition: 'right',
-				navigationTooltips: ['First page', 'Second page', 'Third and last page'],
-				scrollingSpeed: 1000
+				loopHorizontal: false,
 			});
 		});
 	</script>
 
+	<!-- modernizr -->
+	<script src="js/modernizr.js"></script>
+
+	<script src="js/bootstrap.min.js"></script>
+
+	<!--  custom script -->
+	<script src="js/custom.js"></script>
+
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
 	<!-- Chart loader -->
 	<script type="text/javascript" src="js/chart.js"></script>
 
